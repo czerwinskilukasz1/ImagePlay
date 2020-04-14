@@ -31,7 +31,7 @@ using std::complex;
 typedef std::complex<double> Complex;
 
 /**
- * @brief The IPLComplexImage class
+ * @brief The IPLComplexImage class stores a Complex value for each pixel.
  */
 class IPLSHARED_EXPORT IPLComplexImage : public IPLData
 {

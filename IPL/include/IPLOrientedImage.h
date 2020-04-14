@@ -25,7 +25,7 @@
 #include "IPLImage.h"
 
 /**
- * @brief The IPLComplexImage class
+ * @brief The IPLOrientedImage class has 2 planes: magnitude (plane 0) and phase (plane 1).
  */
 class IPLSHARED_EXPORT IPLOrientedImage : public IPLImage
 {

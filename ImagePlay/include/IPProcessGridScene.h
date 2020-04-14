@@ -64,6 +64,8 @@ public:
     QList<IPProcessStep*>*  steps                   ()                      { return &_steps; }
     QList<IPProcessEdge*>*  edges                   ()                      { return &_edges; }
 
+    static bool canBePlugged(IPLProcessIO output, IPLProcessIO input);
+
     // QGraphicsScene interface
 protected:
     void                    dragEnterEvent          (QGraphicsSceneDragDropEvent *event);

@@ -27,7 +27,7 @@
 #include <sstream>
 
 /**
- * @brief The IPLPoint class
+ * @brief The IPLPoint class stores a point in 2D space.
  */
 class IPLSHARED_EXPORT IPLPoint : public IPLData
 {

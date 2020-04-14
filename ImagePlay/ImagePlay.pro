@@ -93,6 +93,31 @@ win32: {
     CONFIG(release, debug|release): LIBS += -L$$PWD/../_bin/$$CONFIGURATION/$$PLATFORM -lIPL
     else:CONFIG(debug, debug|release): LIBS += -L$$PWD/../_bin/$$CONFIGURATION/$$PLATFORM -lIPL
 
+    # OpenCV libraries
+    CONFIG(release, debug|release) {
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_core430
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_imgproc430
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_highgui430
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_videoio430
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_calib3d430
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_optflow430
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_features2d430
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_xfeatures2d430
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_photo430
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_xphoto430
+    } else {
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_core430d
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_imgproc430d
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_highgui430d
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_videoio430d
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_calib3d430d
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_optflow430d
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_features2d430d
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_xfeatures2d430d
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_photo430d
+        LIBS += -L$$PWD/../_lib/opencv/x64/vc16/lib/ -lopencv_xphoto430d
+    }
+
     #copy stuff after compiling
     #resources.path = ../_bin/$$CONFIGURATION/$$PLATFORM
     #resources.files += media/process_icons

@@ -47,8 +47,9 @@ public:
     IPLData*                getResultData           (int);
 
 protected:
-    IPLImage*               _result;
-    IPLImage*               _overlay;
+    IPLImage*               _result;  // owned by IPLHoughLineSegments
+    IPLImage*               _overlay; // owned by IPLHoughLineSegments
+    IPLLines*               _lines;   // owned by IPLHoughLineSegments
 };
 
 #endif // IPLHoughLineSegments_H

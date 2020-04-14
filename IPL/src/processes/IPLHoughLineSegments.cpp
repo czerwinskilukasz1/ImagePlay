@@ -19,11 +19,14 @@
 
 #include "IPLHoughLineSegments.h"
 
+#include "IPLLines.h"
+
 void IPLHoughLineSegments::init()
 {
     // init
     _overlay        = NULL;
     _result         = NULL;
+    _lines          = NULL;
 
     // basic settings
     setClassName("IPLHoughLineSegments");
@@ -36,12 +39,13 @@ void IPLHoughLineSegments::init()
     addInput("Image", IPL_IMAGE_GRAYSCALE);
     addOutput("Hough Result", IPL_IMAGE_GRAYSCALE);
     addOutput("Line Overlay", IPL_IMAGE_COLOR);
+    addOutput("Line Data", IPL_LINES);
 
     // properties
     addProcessPropertyDouble("rho", "Rho", "Distance resolution of the accumulator in pixels", 1, IPL_WIDGET_SLIDER, 0, 10);
     addProcessPropertyDouble("theta", "Theta", "Angle resolution of the accumulator in radians.", 0.01, IPL_WIDGET_SLIDER, 0, 5.14);
     addProcessPropertyInt("threshold", "Threshold", "Accumulator threshold parameter.", 1, IPL_WIDGET_SLIDER, 1, 1000);
-    addProcessPropertyInt("minLenght", "Min. Length", "", 1, IPL_WIDGET_SLIDER, 1, 1000);
+    addProcessPropertyInt("minLength", "Min. Length", "", 1, IPL_WIDGET_SLIDER, 1, 1000);
     addProcessPropertyInt("maxLineGap", "Max. Line Gap", "", 1, IPL_WIDGET_SLIDER, 1, 1000);
 }
 
@@ -58,19 +62,23 @@ bool IPLHoughLineSegments::processInputData(IPLData* data, int, bool)
     _result = NULL;
     delete _overlay;
     _overlay = NULL;
+    delete _lines;
+    _lines = NULL;
+
+    std::vector<cv::Vec4i> lines;
 
     // WARNING: cv::HoughLinesP does not work in debug mode!!!
     //          destroys the std::vector<cv::Vec4i> lines;
-#ifdef _DEBUG
-    addError("cv::HoughLinesP does not work in debug mode");
-    return false;
-#endif
+//#ifdef _DEBUG
+//    addError("cv::HoughLinesP does not work in debug mode");
+//    return false;
+//#endif
 
     // get properties
     double rho              = getProcessPropertyDouble("rho");
     double theta            = getProcessPropertyDouble("theta");
     int threshold           = getProcessPropertyInt("threshold");
-    int minLength           = getProcessPropertyInt("minLenght");
+    int minLength           = getProcessPropertyInt("minLength");
     int maxLineGap          = getProcessPropertyInt("maxLineGap");
 
     notifyProgressEventHandler(-1);
@@ -81,9 +89,7 @@ bool IPLHoughLineSegments::processInputData(IPLData* data, int, bool)
     cvtColor(image->toCvMat(), input, cv::COLOR_BGR2GRAY);
     overlay.convertTo(overlay, CV_8UC3);
 
-    std::vector<cv::Vec4i> lines;
     cv::HoughLinesP(input, lines, rho, theta, threshold, minLength, maxLineGap);
-
 
     std::stringstream s;
     s << "Lines found: ";
@@ -101,6 +107,7 @@ bool IPLHoughLineSegments::processInputData(IPLData* data, int, bool)
 
     _overlay = new IPLImage(overlay);
     _result = new IPLImage(result);
+    _lines = new IPLLines(lines, image->width(), image->height());
 
 	return true;
 }
@@ -109,12 +116,20 @@ bool IPLHoughLineSegments::processInputData(IPLData* data, int, bool)
  * \brief IPLHoughLineSegments::getResultData
  *        index == 0: "Hough Result", IPL_IMAGE_GRAYSCALE
  *        index == 1: "Circle Overlay", IPL_IMAGE_COLOR
+ *        index == 2: "Line Segments", IPL_LINES
  * \return
  */
 IPLData* IPLHoughLineSegments::getResultData(int index)
 {
-    if(index == 0)
+    switch(index) {
+    case 0:
         return _result;
-    else
+    case 1:
         return _overlay;
+    case 2:
+        return _lines;
+    default:
+        addError("Wrong index");
+        return NULL;
+    }
 }

@@ -24,7 +24,7 @@
 #include "IPLPoint.h"
 #include "IPLMatrix.h"
 #include "IPLKeyPoints.h"
-
+#include "IPLLines.h"
 
 bool IPLData::isConvertibleTo(IPLDataType dataType)
 {
@@ -40,6 +40,8 @@ bool IPLData::isConvertibleTo(IPLDataType dataType)
         return toPoint() != NULL;
     case IPL_MATRIX:
         return toMatrix() != NULL;
+    case IPL_LINES:
+        return toLines() != NULL;
     case IPL_IMAGE_ORIENTED:
     case IPL_SHAPES:
     case IPL_UNDEFINED:
@@ -73,4 +75,9 @@ IPLMatrix* IPLData::toMatrix()
 IPLKeyPoints* IPLData::toKeyPoints()
 {
     return dynamic_cast<IPLKeyPoints*>(this);
+}
+
+IPLLines* IPLData::toLines()
+{
+    return dynamic_cast<IPLLines*>(this);
 }

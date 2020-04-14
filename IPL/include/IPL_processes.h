@@ -109,4 +109,6 @@
 
 #include "IPLCameraCalibration.h"
 
+#include "IPLLineFilter.h"
+
 #endif // IPL_H

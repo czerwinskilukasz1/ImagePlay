@@ -19,6 +19,8 @@
 
 #include "IPImageViewer.h"
 
+#include "opencv2/core/matx.hpp"
+
 IPImageViewer::IPImageViewer(ImageViewerWindow* imageViewer, QWidget *parent) :
     QFrame(parent)
 {
@@ -173,6 +175,28 @@ void IPImageViewer::updateImage()
                     painter.drawText(box, Qt::AlignCenter|Qt::AlignVCenter, QString::number(matrix->get(x,y), 'f', 2));
                     painter.drawRect(box);
                 }
+            }
+        }
+        else if (_rawData->type() == IPL_LINES)
+        {
+            _image = new QImage(_rawData->toLines()->width(), _rawData->toLines()->height(), QImage::Format_RGB32);
+            _image->fill(Qt::white);
+
+            QPainter painter(_image);
+            painter.setRenderHint(QPainter::Antialiasing, true);
+
+            // header
+            QPen pen(Qt::black);
+            pen.setWidth(1);
+            painter.setPen(pen);
+
+            IPLLines* linesPtr = _rawData->toLines();
+
+            for(int i = 0; i < linesPtr->size(); ++i)
+            {
+                const cv::Vec4i& line = (*linesPtr)[i];
+                int x = line[0];
+                painter.drawLine(line[0], line[1], line[2], line[3]);
             }
         }
 

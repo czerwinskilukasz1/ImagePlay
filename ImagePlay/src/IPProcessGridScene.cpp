@@ -125,10 +125,13 @@ bool IPProcessGridScene::addEdge(IPProcessEdge* edge)
     IPLProcessIO output = edge->from()->process()->outputs()->at(indexOut);
     IPLProcessIO input  = edge->to()->process()->inputs()->at(indexIn);
 
+    if (!canBePlugged(output, input))
+        return false;
+
     // inputs can accept lower types
     // COLOR accepts GRAY and BW
-    if(output.type > input.type)
-        return false;
+//    if(output.type > input.type)
+//        return false;
 
     /*IPLData* outputData = edge->from()->process()->getResultData(indexOut);
     if (!outputData->isConvertibleTo(input.type))
@@ -145,6 +148,24 @@ bool IPProcessGridScene::addEdge(IPProcessEdge* edge)
     edge->to()->process()->inputs()->at(edge->indexTo()).occupied = true;
 
     return true;
+}
+
+bool IPProcessGridScene::canBePlugged(IPLProcessIO output, IPLProcessIO input)
+{
+    if(input.type == output.type)
+        return true;
+
+    if(input.type == IPL_IMAGE_COLOR)
+    {
+        if (output.type == IPL_IMAGE_BW || output.type == IPL_IMAGE_GRAYSCALE)
+        {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
 }
 
 void IPProcessGridScene::removeEdge(IPProcessEdge* edge)

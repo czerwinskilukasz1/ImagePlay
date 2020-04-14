@@ -72,16 +72,17 @@ typedef float           ipl_basetype;
 #define PI 3.14159265359
 
 
+// Attention: If you add a new item here, you also need to add it to dataTypeNames in the same order
 enum IPLDataType
 {
-    IPL_IMAGE_BW = 0,
-    IPL_IMAGE_GRAYSCALE,
-    IPL_IMAGE_COLOR,
-    IPL_IMAGE_ORIENTED,
-    IPL_IMAGE_COMPLEX,
-    IPL_POINT,
-    IPL_MATRIX,
-    IPL_SHAPES,
+    IPL_IMAGE_BW = 0, // b&w image
+    IPL_IMAGE_GRAYSCALE, // grayscale image
+    IPL_IMAGE_COLOR, // color image
+    IPL_IMAGE_ORIENTED, // oriented image (phase & magnitude, see IPLOrientedImage)
+    IPL_IMAGE_COMPLEX, // complex image (complex value at each pixel, see IPLComplexImage)
+    IPL_POINT, // 2D point (see IPLPoint)
+    IPL_MATRIX, // 2D matrix (see IPLMatrix)
+    IPL_SHAPES, // it seems it's not used right now
     IPL_UNDEFINED,
 
     //Add additional data types here
@@ -90,7 +91,11 @@ enum IPLDataType
     IPL_CV_MAT,
     IPL_VECTOR,
 
-    IPL_NUM_DATATYPES
+    IPL_LINES, // a vector of lines e.g. from HoughTransform
+
+    IPL_NUM_DATATYPES // This one is just a trick to hold a count of possible IPL_* values from above.
+
+    // Attention: If you add a new item here, you also need to add it to dataTypeNames in the same order
 };
 IPLSHARED_EXPORT const char *dataTypeName(IPLDataType type);
 

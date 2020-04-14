@@ -27,7 +27,7 @@
 #include <vector>
 
 /**
- * @brief The IPLImage class
+ * @brief The IPLImage class stores a 2D matrix of ipl_basetype (float) values.
  */
 class IPLSHARED_EXPORT IPLMatrix : public IPLData
 {

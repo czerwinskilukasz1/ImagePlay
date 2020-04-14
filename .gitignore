@@ -55,3 +55,8 @@ ImagePlay.VC.db
 IPL/release/
 IPL/debug/
 IPL/lib/
+ImagePlay/object_script.ImagePlay.Debug
+ImagePlay/object_script.ImagePlay.Release
+object_script.IPL.Debug
+object_script.IPL.Release
+

@@ -46,7 +46,7 @@ public:
     IPLImage( cv::Mat& cvMat );
     ~IPLImage();
 
-    int getNumberOfPlanes( void )   { return _nrOfPlanes; }
+    int getNumberOfPlanes(void)     { return _nrOfPlanes; }
     int width(void)                 { return _width; }
     int height(void)                { return _height; }
 

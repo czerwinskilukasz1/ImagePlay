@@ -44,8 +44,14 @@ TEMPLATE = lib
 
 DEFINES += IPL_LIBRARY
 
-HEADERS += $$files(*.h,true)
-SOURCES += $$files(*.cpp,true)
+HEADERS += $$files(*.h,true) \
+    include/IPLLine.h \
+    include/IPLLines.h \
+    include/processes/IPLLineFilter.h
+SOURCES += $$files(*.cpp,true) \
+    src/IPLLine.cpp \
+    src/IPLLines.cpp \
+    src/processes/IPLLineFilter.cpp
 OTHER_FILES += $$files(*,true)
 
 win32: LIBS += -L$$PWD/lib/FreeImage/ -lFreeImage

@@ -529,6 +529,8 @@ void MainWindow::loadProcesses()
 
     _factory->registerProcess("IPLGoodFeaturesToTrack", new IPLGoodFeaturesToTrack);
 
+    _factory->registerProcess("IPLLineFilter", new IPLLineFilter);
+
     // not ready:
     /*_factory->registerProcess("IPLMatchTemplate",       new IPLMatchTemplate);
     _factory->registerProcess("IPLFloodFill",           new IPLFloodFill);
