@@ -26,22 +26,35 @@
 #include "IPLKeyPoints.h"
 #include "IPLLines.h"
 
-bool IPLData::isConvertibleTo(IPLDataType dataType)
+bool IPLData::isConvertibleTo(IPLDataType from, IPLDataType to)
 {
-    switch (dataType)
+    if (from == to)
+        return true;
+
+    // Below are non-trivial conversions
+    switch (to)
     {
     case IPL_IMAGE_BW:
+        return false;
+
     case IPL_IMAGE_GRAYSCALE:
-    case IPL_IMAGE_COLOR:
-        return toImage() != NULL;
+        return (from == IPL_IMAGE_BW);
+
+    case IPL_IMAGE_COLOR: // COLOR accepts GRAY and BW
+        return (from == IPL_IMAGE_BW || from == IPL_IMAGE_GRAYSCALE);
+
     case IPL_IMAGE_COMPLEX:
-        return toComplexImage() != NULL;
+        return false;
+
     case IPL_POINT:
-        return toPoint() != NULL;
+        return false;
+
     case IPL_MATRIX:
-        return toMatrix() != NULL;
+        return false;
+
     case IPL_LINES:
-        return toLines() != NULL;
+        return false;
+
     case IPL_IMAGE_ORIENTED:
     case IPL_SHAPES:
     case IPL_UNDEFINED:
@@ -50,6 +63,11 @@ bool IPLData::isConvertibleTo(IPLDataType dataType)
         break;
     }
     return false;
+}
+
+bool IPLData::isConvertibleTo(IPLDataType dataType)
+{
+    return isConvertibleTo(_type, dataType);
 }
 
 IPLImage* IPLData::toImage()

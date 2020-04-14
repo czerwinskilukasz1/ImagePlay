@@ -40,6 +40,7 @@ public:
     IPLDataType         type            (void)                  { return _type; }
 
     bool                isConvertibleTo(IPLDataType);
+    static bool         isConvertibleTo(IPLDataType from, IPLDataType to);
     IPLImage*           toImage();
     IPLComplexImage*    toComplexImage();
     IPLPoint*           toPoint();

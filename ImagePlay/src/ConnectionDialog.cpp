@@ -19,6 +19,8 @@
 
 #include "ConnectionDialog.h"
 
+#include "IPLData.h"
+
 /*! ConnectionDialog Constructor:
 If command is cmdMenu the button is supposed to have sub menu buttons.
 If isCheckable is true the button gets a checkbox
@@ -45,8 +47,8 @@ ConnectionDialog::ConnectionDialog(IPProcessStep *from, IPProcessStep *to, IPPro
     _scene = scene;
 
     // set up GUI
-    _layout->addWidget(new QLabel("<b>Source Process</b>", this), 0, 0);
-    _layout->addWidget(new QLabel("<b>Destination Process</b>", this), 0, 2);
+    _layout->addWidget(new QLabel("<b>Source</b>", this), 0, 0);
+    _layout->addWidget(new QLabel("<b>Destination</b>", this), 0, 2);
 
     setStyleSheet("QDialog {border: 1px solid rgb(53,53,53);}");
 
@@ -59,18 +61,37 @@ ConnectionDialog::ConnectionDialog(IPProcessStep *from, IPProcessStep *to, IPPro
     {
         QRadioButton* btn = new QRadioButton(QString::fromStdString(_from->process()->outputs()->at(i).name), this);
 
+        const IPLProcessIO& output = _from->process()->outputs()->at(i);
         // check if output is free
-        if(_from->process()->outputs()->at(i).occupied)
+        if(output.occupied)
         {
             btn->setEnabled(false);
         }
         else
         {
-            // make sure one option is set as default
-            if(!isDefaultSet)
+            bool shouldBeEnabled = false;
+
+            std::vector<IPLProcessIO>* inputs = _to->process()->inputs();
+            // set it as enabled iff there is a destination compatible with this output
+            for(int j=0; j < (int)inputs->size() && !shouldBeEnabled; j++)
             {
-                btn->setChecked(true);
-                isDefaultSet = true;
+                const IPLProcessIO& input = inputs->at(j);
+                if (IPLData::isConvertibleTo(output.type, input.type))
+                {
+                    shouldBeEnabled = true;
+
+                    // set as checked a default option; please note we might have no default checked if none of the options are valid
+                    if(!isDefaultSet)
+                    {
+                        btn->setChecked(true);
+                        isDefaultSet = true;
+                    }
+                }
+            }
+
+            if (!shouldBeEnabled)
+            {
+                btn->setEnabled(false);
             }
         }
 
@@ -81,7 +102,7 @@ ConnectionDialog::ConnectionDialog(IPProcessStep *from, IPProcessStep *to, IPPro
         connect(btn, &QPushButton::clicked, this, &ConnectionDialog::redrawConnection);
 
         // special styling
-        btn->setStyleSheet(QString("QRadioButton {width: 10px; spacing: -130px; text-align:right;} QRadioButton::indicator { subcontrol-origin: content; subcontrol-position: right top; }"));
+        btn->setStyleSheet(QString("QRadioButton {width: 10px; spacing: -115px; text-align:right;} QRadioButton::indicator { subcontrol-origin: content; subcontrol-position: right top; }"));
     }
 
     int rowR = 1;
@@ -90,18 +111,37 @@ ConnectionDialog::ConnectionDialog(IPProcessStep *from, IPProcessStep *to, IPPro
     {
         QRadioButton* btn = new QRadioButton(QString::fromStdString(_to->process()->inputs()->at(i).name), this);
 
+        const IPLProcessIO& input = _to->process()->inputs()->at(i);
         // check if output is free
-        if(_to->process()->inputs()->at(i).occupied)
+        if(input.occupied)
         {
             btn->setEnabled(false);
         }
         else
         {
-            // make sure one option is set as default
-            if(!isDefaultSet)
+            bool shouldBeEnabled = false;
+
+            std::vector<IPLProcessIO>* outputs = _from->process()->outputs();
+            // set it as enabled iff there is a source compatible with this destination
+            for(int j=0; j < (int)outputs->size() && !shouldBeEnabled; j++)
             {
-                btn->setChecked(true);
-                isDefaultSet = true;
+                const IPLProcessIO& output = outputs->at(j);
+                if (IPLData::isConvertibleTo(output.type, input.type))
+                {
+                    shouldBeEnabled = true;
+
+                    // set as checked a default option; please note we might have no default checked if none of the options are valid
+                    if(!isDefaultSet)
+                    {
+                        btn->setChecked(true);
+                        isDefaultSet = true;
+                    }
+                }
+            }
+
+            if (!shouldBeEnabled)
+            {
+                btn->setEnabled(false);
             }
         }
 
@@ -179,6 +219,12 @@ void ConnectionDialog::paintEvent(QPaintEvent* e)
 
         painter.setPen(pen);
         painter.drawPath(path);
+
+        _btnAccept->setEnabled(true);
+    }
+    else
+    {
+        _btnAccept->setEnabled(false);
     }
 
     QDialog::paintEvent(e);
