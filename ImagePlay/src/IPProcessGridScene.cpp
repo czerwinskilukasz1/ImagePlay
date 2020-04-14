@@ -110,6 +110,7 @@ void IPProcessGridScene::removeStep(IPProcessStep* step)
 
 bool IPProcessGridScene::addEdge(IPProcessEdge* edge)
 {
+    // If trying to create connection to self, always fail.
     if(edge->from() == edge->to())
         return false;
 

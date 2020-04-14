@@ -678,6 +678,11 @@ void MainWindow::removeStep(IPProcessStep *step)
 
 void MainWindow::addEdge(IPProcessEdge *edge)
 {
+    // If trying to create connection to self,
+    // don't even bother showing any error message.
+    if(edge->from() == edge->to())
+        return;
+
     // add to scene
     if(_scene->addEdge(edge))
     {
