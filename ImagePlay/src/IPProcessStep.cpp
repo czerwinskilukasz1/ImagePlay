@@ -168,7 +168,7 @@ void IPProcessStep::paint(QPainter *painter, const QStyleOptionGraphicsItem*, QW
 
             // text
             QFont fontSmallBlack(painter->font());
-            fontSmallBlack.setPointSize(7);
+            fontSmallBlack.setPixelSize(7);
             fontSmallBlack.setBold(false);
             QRect textBounds2(8,44,48,14);
             QPen penBlack(Qt::black);
@@ -181,7 +181,7 @@ void IPProcessStep::paint(QPainter *painter, const QStyleOptionGraphicsItem*, QW
     {
 
         // separator
-        painter->drawLine(8,40,56,40);
+        painter->drawLine(8,42,56,42);
 
         // main text
         QRect textBounds(9,9,46,32);
@@ -197,7 +197,8 @@ void IPProcessStep::paint(QPainter *painter, const QStyleOptionGraphicsItem*, QW
 
         // only show progress if not yet finished
         if(_progress > 0 && _progress < 100)
-        {
+        {   // in progress
+
             // progress bar
             int progressWidth = _progress*32/100;
             QBrush brushGreen(QColor(39, 174, 96));
@@ -205,7 +206,7 @@ void IPProcessStep::paint(QPainter *painter, const QStyleOptionGraphicsItem*, QW
 
             // text
             QFont fontSmallBlack(painter->font());
-            fontSmallBlack.setPointSize(7);
+            fontSmallBlack.setPixelSize(7);
             fontSmallBlack.setBold(false);
             QRect textBounds2(22,43,32,14);
             QPen penBlack(Qt::black);
@@ -214,7 +215,8 @@ void IPProcessStep::paint(QPainter *painter, const QStyleOptionGraphicsItem*, QW
             painter->drawText(textBounds2, Qt::AlignRight, QString("%1%").arg(_progress));
         }
         else if(_progress < 0)
-        {
+        {   // not started (?)
+
             // draw rotating progress for unmeasurable operations
             QBrush brushGreen(QColor(39, 174, 96));
 
@@ -240,16 +242,19 @@ void IPProcessStep::paint(QPainter *painter, const QStyleOptionGraphicsItem*, QW
             _progressFrame = (_progressFrame > 14) ? 0 : _progressFrame;
         }
         else
-        {
+        {   // finished
+
             // footer text
             QFont fontSmallGray(painter->font());
-            fontSmallGray.setPointSize(7);
+            fontSmallGray.setPixelSize(8);
             fontSmallGray.setBold(false);
-            QRect textBounds2(22,43,32,14);
+            QRect textBounds2(22,43,32,13);
             QPen penGray(Qt::gray);
             painter->setPen(penGray);
             painter->setFont(fontSmallGray);
-            painter->drawText(textBounds2, Qt::AlignRight, QString("%1ms").arg(_durationMs));
+            QBrush brushGreenish(QColor(200, 255, 200));
+            painter->fillRect(9,43,46,13, brushGreenish);
+            painter->drawText(textBounds2, Qt::AlignRight | Qt::AlignVCenter, QString("%1ms").arg(_durationMs));
         }
 
 
@@ -274,7 +279,7 @@ void IPProcessStep::paint(QPainter *painter, const QStyleOptionGraphicsItem*, QW
 
         QPen penWhite(QColor(255,255,255));
         painter->setPen(penWhite);
-        fontSmallGray.setPointSize(6);
+        fontSmallGray.setPixelSize(6);
         painter->setFont(fontSmallGray);
         //painter->drawText(idBounds, Qt::AlignCenter, QString::number(stepID()));
         painter->drawText(idBounds, Qt::AlignCenter, "ERROR");
@@ -292,7 +297,7 @@ void IPProcessStep::paint(QPainter *painter, const QStyleOptionGraphicsItem*, QW
         painter->fillRect(idBounds, brushYellow);
         painter->drawRect(idBounds);
 
-        fontSmallGray.setPointSize(6);
+        fontSmallGray.setPixelSize(6);
         painter->setFont(fontSmallGray);
         //painter->drawText(idBounds, Qt::AlignCenter, QString::number(stepID()));
         painter->drawText(idBounds, Qt::AlignCenter, "WARNING");
@@ -314,7 +319,7 @@ void IPProcessStep::paint(QPainter *painter, const QStyleOptionGraphicsItem*, QW
 
         QPen penWhite(QColor(255,255,255));
         painter->setPen(penWhite);
-        fontSmallGray.setPointSize(6);
+        fontSmallGray.setPixelSize(6);
         painter->setFont(fontSmallGray);
         painter->drawText(bounds, Qt::AlignCenter, "CV");
     }
