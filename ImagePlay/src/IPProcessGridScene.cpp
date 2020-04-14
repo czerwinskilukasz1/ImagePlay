@@ -153,20 +153,7 @@ bool IPProcessGridScene::addEdge(IPProcessEdge* edge)
 
 bool IPProcessGridScene::canBePlugged(IPLProcessIO output, IPLProcessIO input)
 {
-    if(input.type == output.type)
-        return true;
-
-    if(input.type == IPL_IMAGE_COLOR)
-    {
-        if (output.type == IPL_IMAGE_BW || output.type == IPL_IMAGE_GRAYSCALE)
-        {
-            return true;
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
+    return IPLData::isConvertibleTo(output.type, input.type);
 }
 
 void IPProcessGridScene::removeEdge(IPProcessEdge* edge)

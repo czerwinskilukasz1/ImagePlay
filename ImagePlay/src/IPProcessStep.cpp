@@ -451,7 +451,7 @@ void IPProcessStep::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
             if(process()->availableOutputs() > 0 && otherItem->process()->availableInputs() > 0)
             {
 
-                // if source or destination have multiple inputs/outputs show connection dialog
+                // if source or destination have multiple inputs/outputs, show connection dialog
                 if(process()->outputs()->size() > 1 || otherItem->process()->inputs()->size() > 1)
                 {
                     ConnectionDialog* connectionDialog = new ConnectionDialog(this, otherItem, scn, _mainWindow);
