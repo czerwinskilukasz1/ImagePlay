@@ -41,19 +41,24 @@ class IPLSHARED_EXPORT IPLImage : public IPLData
 {
 public:
     IPLImage();
-    IPLImage( const IPLImage& image );
-    IPLImage( IPLDataType _type, int width, int height );
-    IPLImage( cv::Mat& cvMat );
+    IPLImage(const IPLImage& image);
+    IPLImage(IPLDataType _type, int width, int height);
+
+    /**
+     * @brief Copies cvMat over
+     * @param cvMat
+     */
+    IPLImage(const cv::Mat& cvMat);
     ~IPLImage();
 
     int getNumberOfPlanes(void)     { return _nrOfPlanes; }
     int width(void)                 { return _width; }
     int height(void)                { return _height; }
 
-    uchar* rgb32 (void);
+    uchar* rgb32(void);
     static void rgb32CleanupHandler(void *info);
     IPLImagePlane* plane(int planeNr);
-    void fillColor( ipl_basetype color );
+    void fillColor(ipl_basetype color);
 
     std::string                 toString(int x, int y);
 

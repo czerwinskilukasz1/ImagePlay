@@ -22,7 +22,7 @@
 void IPLLineFilter::init()
 {
     // init
-    _result         = NULL;
+    _lines         = NULL;
 
     // basic settings
     setClassName("IPLLineFilter");
@@ -33,6 +33,7 @@ void IPLLineFilter::init()
 
     // inputs and outputs
     addInput("Lines", IPL_LINES);
+    addOutput("Visualization of Filtered Lines", IPL_IMAGE_GRAYSCALE);
     addOutput("Filtered Lines", IPL_LINES);
 
     // properties
@@ -42,7 +43,7 @@ void IPLLineFilter::init()
 
 void IPLLineFilter::destroy()
 {
-    delete _result;
+    delete _lines;
 }
 
 bool IPLLineFilter::processInputData(IPLData* data, int, bool)
@@ -50,14 +51,20 @@ bool IPLLineFilter::processInputData(IPLData* data, int, bool)
     IPLLines* lines = data->toLines();
 
     // delete previous result
-    delete _result;
-    _result = NULL;
+    delete _lines;
+    _lines = NULL;
+
+    delete _lines_visualization;
+    _lines_visualization = NULL;
 
     // get properties
     int minLength           = getProcessPropertyDouble("minLength");
     int maxLength           = getProcessPropertyDouble("maxLength");
 
     notifyProgressEventHandler(-1);
+
+    cv::Mat visualization = cv::Mat(lines->height(), lines->width(), CV_8UC1);
+    visualization = cv::Scalar(0);
 
     IPLLines* filteredLines = new IPLLines(lines->width(), lines->height());
     for (int i = 0; i < lines->size(); ++i) {
@@ -73,8 +80,12 @@ bool IPLLineFilter::processInputData(IPLData* data, int, bool)
         {
             filteredLines->push_back(line);
         }
+
+        cv::line(visualization, cv::Point(line[0], line[1]), cv::Point(line[2], line[3]), cv::Scalar(255), 1, cv::LINE_AA);
     }
-    _result = filteredLines;
+
+    _lines_visualization = new IPLImage(visualization);
+    _lines = filteredLines;
 
     std::stringstream s;
     s << "Lines before filtering: " << lines->size() << "\n";
@@ -90,5 +101,14 @@ bool IPLLineFilter::processInputData(IPLData* data, int, bool)
  */
 IPLData* IPLLineFilter::getResultData(int index)
 {
-    return _result;
+    switch(index) {
+    case 0:
+        return _lines_visualization;
+    case 1:
+        return _lines;
+    default:
+        addError("Wrong index");
+        return NULL;
+    }
+
 }

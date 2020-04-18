@@ -195,7 +195,6 @@ void IPImageViewer::updateImage()
             for(int i = 0; i < linesPtr->size(); ++i)
             {
                 const cv::Vec4i& line = (*linesPtr)[i];
-                int x = line[0];
                 painter.drawLine(line[0], line[1], line[2], line[3]);
             }
         }

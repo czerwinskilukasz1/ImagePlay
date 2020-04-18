@@ -46,7 +46,8 @@ public:
     IPLData*                getResultData           (int);
 
 protected:
-    IPLLines*               _result;
+    IPLImage*               _lines_visualization = NULL;  // owned by IPLLineFilter
+    IPLLines*               _lines = NULL;   // owned by IPLLineFilter
 };
 
 #endif // IPLLineFilter_H

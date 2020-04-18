@@ -58,7 +58,7 @@ IPLImage::IPLImage( IPLDataType t, int width, int height )
     _instanceCount++;
 }
 
-IPLImage::IPLImage(cv::Mat &cvMat)
+IPLImage::IPLImage(const cv::Mat &cvMat)
 {
     // _type = other._type;
     _width  = cvMat.cols;
@@ -73,7 +73,7 @@ IPLImage::IPLImage(cv::Mat &cvMat)
     if(_nrOfPlanes > 3)
         _nrOfPlanes = 3;
 
-    for( int i=0; i<_nrOfPlanes; i++ )
+    for(int i=0; i<_nrOfPlanes; i++)
     {
         _planes.push_back(new IPLImagePlane(_width, _height));
     }
