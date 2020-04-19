@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYCHECKBOX_H
-#define IPPROPERTYCHECKBOX_H
+#ifndef IPPropertyCheckbox_H
+#define IPPropertyCheckbox_H
 
 #include <QWidget>
 #include <QSlider>
@@ -84,4 +84,4 @@ private:
     QCheckBox* _checkbox;
 };
 
-#endif // IPPROPERTYCHECKBOX_H
+#endif // IPPropertyCheckbox_H

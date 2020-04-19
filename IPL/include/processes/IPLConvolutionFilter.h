@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLCONVOLUTIONFILTER_H
-#define IPLCONVOLUTIONFILTER_H
+#ifndef IPLConvolutionFilter_H
+#define IPLConvolutionFilter_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -49,4 +49,4 @@ protected:
     bool                    _normalize;
 };
 
-#endif // IPLCONVOLUTIONFILTER_H
+#endif // IPLConvolutionFilter_H

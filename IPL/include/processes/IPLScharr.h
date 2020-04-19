@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLSCHARR_H
-#define IPLSCHARR_H
+#ifndef IPLScharr_H
+#define IPLScharr_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -51,4 +51,4 @@ protected:
     IPLImage*               _corners;
 };
 
-#endif // IPLSCHARR_H
+#endif // IPLScharr_H

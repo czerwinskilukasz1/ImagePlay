@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLMORPHOLOGICALEDGE_H
-#define IPLMORPHOLOGICALEDGE_H
+#ifndef IPLMorphologicalEdge_H
+#define IPLMorphologicalEdge_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -41,4 +41,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLMORPHOLOGICALEDGE_H
+#endif // IPLMorphologicalEdge_H

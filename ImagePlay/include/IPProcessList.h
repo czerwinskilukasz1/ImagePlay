@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSLIST_H
-#define IPPROCESSLIST_H
+#ifndef IPProcessList_H
+#define IPProcessList_H
 
 #include <QListWidget>
 #include <QDrag>
@@ -53,4 +53,4 @@ protected:
     void                startDrag       (Qt::DropActions supportedActions);
 };
 
-#endif // IPPROCESSLIST_H
+#endif // IPProcessList_H

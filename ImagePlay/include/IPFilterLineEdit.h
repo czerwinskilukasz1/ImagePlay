@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPFILTERLINEEDIT_H
-#define IPFILTERLINEEDIT_H
+#ifndef IPFilterLineEdit_H
+#define IPFilterLineEdit_H
 
 #include <QLineEdit>
 #include <QPushButton>
@@ -44,4 +44,4 @@ private:
 
 };
 
-#endif // IPFILTERLINEEDIT_H
+#endif // IPFilterLineEdit_H

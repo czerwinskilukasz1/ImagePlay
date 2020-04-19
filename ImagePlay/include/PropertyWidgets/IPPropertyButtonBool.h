@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYBUTTONBOOL_H
-#define IPPROPERTYBUTTONBOOL_H
+#ifndef IPPropertyButtonBool_H
+#define IPPropertyButtonBool_H
 
 #include <QWidget>
 #include <QPushButton>
@@ -71,4 +71,4 @@ private:
 };
 
 
-#endif // IPPROPERTYBUTTONBOOL_H
+#endif // IPPropertyButtonBool_H

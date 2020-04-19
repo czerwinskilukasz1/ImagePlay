@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSINPUTOUTPUTWIDGET_H
-#define IPPROCESSINPUTOUTPUTWIDGET_H
+#ifndef IPProcessInputOutputWidget_H
+#define IPProcessInputOutputWidget_H
 
 #include <QWidget>
 
@@ -43,5 +43,5 @@ private:
     MainWindow*                 _mainWindow;
 };
 
-#endif // IPPROCESSINPUTOUTPUTWIDGET_H
+#endif // IPProcessInputOutputWidget_H
 

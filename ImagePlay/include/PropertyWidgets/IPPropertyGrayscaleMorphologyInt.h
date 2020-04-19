@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYGRAYSCALEMORPHOLOGYINT_H
-#define IPPROPERTYGRAYSCALEMORPHOLOGYINT_H
+#ifndef IPPropertyGrayscaleMorphologyInt_H
+#define IPPropertyGrayscaleMorphologyInt_H
 
 #include <QWidget>
 #include <QLabel>
@@ -311,4 +311,4 @@ private:
     std::vector<IPKernelPreset> _presets;
 };
 
-#endif // IPPROPERTYGRAYSCALEMORPHOLOGYINT_H
+#endif // IPPropertyGrayscaleMorphologyInt_H

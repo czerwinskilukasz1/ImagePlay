@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLLAPLACIAN_H
-#define IPLLAPLACIAN_H
+#ifndef IPLLaplacian_H
+#define IPLLaplacian_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -51,4 +51,4 @@ protected:
     IPLImage*               _corners;
 };
 
-#endif // IPLLAPLACIAN_H
+#endif // IPLLaplacian_H

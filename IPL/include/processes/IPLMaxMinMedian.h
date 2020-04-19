@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLMAXMINMEDIAN_H
-#define IPLMAXMINMEDIAN_H
+#ifndef IPLMaxMinMedian_H
+#define IPLMaxMinMedian_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -43,4 +43,4 @@ private:
     ipl_basetype            computeMedian(ipl_basetype *list, int size);
 };
 
-#endif // IPLMAXMINMEDIAN_H
+#endif // IPLMaxMinMedian_H

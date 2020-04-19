@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSFACTORY_H
-#define IPPROCESSFACTORY_H
+#ifndef IPProcessFactory_H
+#define IPProcessFactory_H
 
 #include <QString>
 #include <QVector>
@@ -48,4 +48,4 @@ private:
     QMap<QString, IPLProcess*>   _map;              //!< Contains all currently registered IPLProcesses by name
 };
 
-#endif // IPPROCESSFACTORY_H
+#endif // IPProcessFactory_H

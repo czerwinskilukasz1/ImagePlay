@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLLABELBLOBS_H
-#define IPLLABELBLOBS_H
+#ifndef IPLLabelBlobs_H
+#define IPLLabelBlobs_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -55,4 +55,4 @@ private:
 };
 
 
-#endif // IPLLABELBLOBS_H
+#endif // IPLLabelBlobs_H

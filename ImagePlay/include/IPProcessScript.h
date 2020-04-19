@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSSCRIPT_H
-#define IPPROCESSSCRIPT_H
+#ifndef IPProcessScript_H
+#define IPProcessScript_H
 
 #include "IPL_global.h"
 #include "IPL_processes.h"
@@ -45,4 +45,4 @@ protected:
     //QScriptEngine*    _scriptEngine;
 };
 
-#endif // IPPROCESSSCRIPT_H
+#endif // IPProcessScript_H

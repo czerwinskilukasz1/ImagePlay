@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYBINARYMORPHOLOGYINT_H
-#define IPPROPERTYBINARYMORPHOLOGYINT_H
+#ifndef IPPropertyBinaryMorphologyInt_H
+#define IPPropertyBinaryMorphologyInt_H
 
 #include <QWidget>
 #include <QLabel>
@@ -348,4 +348,4 @@ private:
     std::vector<IPKernelPreset> _presets;
 };
 
-#endif // IPPROPERTYBINARYMORPHOLOGYINT_H
+#endif // IPPropertyBinaryMorphologyInt_H

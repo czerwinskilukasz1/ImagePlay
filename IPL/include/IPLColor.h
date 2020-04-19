@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLCOLOR_H
-#define IPLCOLOR_H
+#ifndef IPLColor_H
+#define IPLColor_H
 
 #include "IPL_global.h"
 
@@ -248,4 +248,4 @@ public:
     }
 };
 
-#endif // IPLCOLOR_H
+#endif // IPLColor_H

@@ -16,8 +16,8 @@
 //  along with ImagePlay.  If not, see <http://www.gnu.org/licenses/>.
 //
 //#############################################################################
-#ifndef IPLHISTOGRAM_H
-#define IPLHISTOGRAM_H
+#ifndef IPLHistogram_H
+#define IPLHistogram_H
 
 #include "IPLImagePlane.h"
 
@@ -162,4 +162,4 @@ private:
     std::vector<int>    _histogramLog;      //!< normalized to range with logarithmic scale
 };
 
-#endif // IPLHISTOGRAM_H
+#endif // IPLHistogram_H

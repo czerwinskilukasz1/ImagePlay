@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLMIN_H
-#define IPLMIN_H
+#ifndef IPLMin_H
+#define IPLMin_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -41,4 +41,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLMIN_H
+#endif // IPLMin_H

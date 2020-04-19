@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLMAX_H
-#define IPLMAX_H
+#ifndef IPLMax_H
+#define IPLMax_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -41,4 +41,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLMAX_H
+#endif // IPLMax_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef SETTINGSWINDOW_H
-#define SETTINGSWINDOW_H
+#ifndef SettingsWindow_H
+#define SettingsWindow_H
 
 #include <QDialog>
 #include <QFileDialog>

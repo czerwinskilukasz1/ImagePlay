@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLGABOR_H
-#define IPLGABOR_H
+#ifndef IPLGabor_H
+#define IPLGabor_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -50,4 +50,4 @@ protected:
     IPLImage*               _result2;
 };
 
-#endif // IPLGABOR_H
+#endif // IPLGabor_H

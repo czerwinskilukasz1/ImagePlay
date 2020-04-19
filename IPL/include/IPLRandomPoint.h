@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLRANDOMPOINT_H
-#define IPLRANDOMPOINT_H
+#ifndef IPLRandomPoint_H
+#define IPLRandomPoint_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -48,4 +48,4 @@ protected:
     IPLPoint*   _point;
 };
 
-#endif // IPLRANDOMPOINT_H
+#endif // IPLRandomPoint_H

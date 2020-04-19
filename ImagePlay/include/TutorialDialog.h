@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef TUTORIALDIALOG_H
-#define TUTORIALDIALOG_H
+#ifndef TutorialDialog_H
+#define TutorialDialog_H
 
 #include <QDialog>
 #include <QPropertyAnimation>
@@ -50,4 +50,4 @@ private:
     int                     _maxSteps;
 };
 
-#endif // TUTORIALDIALOG_H
+#endif // TutorialDialog_H

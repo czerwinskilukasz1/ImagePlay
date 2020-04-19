@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLPOINT_H
-#define IPLPOINT_H
+#ifndef IPLPoint_H
+#define IPLPoint_H
 
 #include "IPL_global.h"
 
@@ -51,4 +51,4 @@ private:
 };
 
 
-#endif // IPLPOINT_H
+#endif // IPLPoint_H

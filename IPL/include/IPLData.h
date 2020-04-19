@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLDATA_H
-#define IPLDATA_H
+#ifndef IPLData_H
+#define IPLData_H
 
 #include "IPL_global.h"
 
@@ -52,4 +52,4 @@ protected:
     IPLDataType         _type;
 };
 
-#endif // IPLDATA_H
+#endif // IPLData_H

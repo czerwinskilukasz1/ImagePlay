@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLEXTRACTLINES_H
-#define IPLEXTRACTLINES_H
+#ifndef IPLExtractLines_H
+#define IPLExtractLines_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -44,4 +44,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLEXTRACTLINES_H
+#endif // IPLExtractLines_H

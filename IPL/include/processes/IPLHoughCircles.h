@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLHOUGHCIRCLES_H
-#define IPLHOUGHCIRCLES_H
+#ifndef IPLHoughCircles_H
+#define IPLHoughCircles_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -51,4 +51,4 @@ protected:
     IPLImage*               _overlay;
 };
 
-#endif // IPLHOUGHCIRCLES_H
+#endif // IPLHoughCircles_H

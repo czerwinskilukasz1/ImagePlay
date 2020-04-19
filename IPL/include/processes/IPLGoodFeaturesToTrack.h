@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLGOODFEATURESTOTRACK_H
-#define IPLGOODFEATURESTOTRACK_H
+#ifndef IPLGoodFeaturesToTrack_H
+#define IPLGoodFeaturesToTrack_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -52,4 +52,4 @@ protected:
     IPLKeyPoints*           _corners;
 };
 
-#endif // IPLGOODFEATURESTOTRACK_H
+#endif // IPLGoodFeaturesToTrack_H

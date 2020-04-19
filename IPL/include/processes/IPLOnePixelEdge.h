@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLONEPIXELEDGE_H
-#define IPLONEPIXELEDGE_H
+#ifndef IPLOnePixelEdge_H
+#define IPLOnePixelEdge_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -41,4 +41,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLONEPIXELEDGE_H
+#endif // IPLOnePixelEdge_H

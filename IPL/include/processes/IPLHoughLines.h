@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLHOUGHLINES_H
-#define IPLHOUGHLINES_H
+#ifndef IPLHoughLines_H
+#define IPLHoughLines_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -51,4 +51,4 @@ protected:
     IPLImage*               _overlay;
 };
 
-#endif // IPLHOUGHLINES_H
+#endif // IPLHoughLines_H

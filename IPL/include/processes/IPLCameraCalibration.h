@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLCAMERACALIBRATION_H
-#define IPLCAMERACALIBRATION_H
+#ifndef IPLCameraCalibration_H
+#define IPLCameraCalibration_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"

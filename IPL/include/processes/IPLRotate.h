@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLROTATE_H
-#define IPLROTATE_H
+#ifndef IPLRotate_H
+#define IPLRotate_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -48,4 +48,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLROTATE_H
+#endif // IPLRotate_H

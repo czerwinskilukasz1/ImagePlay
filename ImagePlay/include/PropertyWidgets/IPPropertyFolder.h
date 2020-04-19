@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYFOLDER_H
-#define IPPROPERTYFOLDER_H
+#ifndef IPPropertyFolder_H
+#define IPPropertyFolder_H
 
 #include <QWidget>
 #include <QHBoxLayout>
@@ -89,4 +89,4 @@ private:
 
 };
 
-#endif // IPPROPERTYFOLDER_H
+#endif // IPPropertyFolder_H

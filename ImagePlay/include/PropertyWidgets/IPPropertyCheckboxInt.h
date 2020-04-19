@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYCHECKBOXINT_H
-#define IPPROPERTYCHECKBOXINT_H
+#ifndef IPPropertyCheckboxInt_H
+#define IPPropertyCheckboxInt_H
 
 #include <QWidget>
 #include <QLabel>
@@ -150,4 +150,4 @@ private:
     bool                                _ignoreUpdates;
 };
 
-#endif // IPPROPERTYCHECKBOXINT_H
+#endif // IPPropertyCheckboxInt_H

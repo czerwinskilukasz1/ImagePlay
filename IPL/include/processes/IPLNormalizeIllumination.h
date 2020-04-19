@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLNORMALIZEILLUMINATION_H
-#define IPLNORMALIZEILLUMINATION_H
+#ifndef IPLNormalizeIllumination_H
+#define IPLNormalizeIllumination_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -44,4 +44,4 @@ protected:
     double                  _factor;
 };
 
-#endif // IPLNORMALIZEILLUMINATION_H
+#endif // IPLNormalizeIllumination_H

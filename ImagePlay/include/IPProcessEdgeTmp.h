@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSEDGETMP_H
-#define IPPROCESSEDGETMP_H
+#ifndef IPProcessEdgeTmp_H
+#define IPProcessEdgeTmp_H
 
 #include <QGraphicsItem>
 #include <QPainter>
@@ -47,4 +47,4 @@ private:
     QPointF             _to;            //!< Second coordinates
 };
 
-#endif // IPPROCESSEDGETMP_H
+#endif // IPProcessEdgeTmp_H

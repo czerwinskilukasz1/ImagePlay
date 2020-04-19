@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSTHREAD_H
-#define IPPROCESSTHREAD_H
+#ifndef IPProcessThread_H
+#define IPProcessThread_H
 
 #include <QThread>
 
@@ -55,4 +55,4 @@ private:
 };
 
 
-#endif // IPPROCESSTHREAD_H
+#endif // IPProcessThread_H

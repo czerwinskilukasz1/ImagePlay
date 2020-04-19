@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYCOLORHSL_H
-#define IPPROPERTYCOLORHSL_H
+#ifndef IPPropertyColorHSL_H
+#define IPPropertyColorHSL_H
 
 #include <QWidget>
 #include <QSlider>
@@ -156,4 +156,4 @@ private:
     QSpinBox* _spinL;
 };
 
-#endif // IPPROPERTYCOLORHSL_H
+#endif // IPPropertyColorHSL_H

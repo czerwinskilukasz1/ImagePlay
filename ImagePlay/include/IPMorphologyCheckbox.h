@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPMORPHOLOGYCHECKBOX_H
-#define IPMORPHOLOGYCHECKBOX_H
+#ifndef IPMorphologyCheckbox_H
+#define IPMorphologyCheckbox_H
 
 #include <QCheckBox>
 #include <QPaintEvent>
@@ -49,4 +49,4 @@ protected:
     void enterEvent(QEvent *);
 };
 
-#endif // IPMORPHOLOGYCHECKBOX_H
+#endif // IPMorphologyCheckbox_H

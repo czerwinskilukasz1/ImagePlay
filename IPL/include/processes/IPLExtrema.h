@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLEXTREMA_H
-#define IPLEXTREMA_H
+#ifndef IPLExtrema_H
+#define IPLExtrema_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -48,4 +48,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLEXTREMA_H
+#endif // IPLExtrema_H

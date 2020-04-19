@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPKERNELPRESET_H
-#define IPKERNELPRESET_H
+#ifndef IPKernelPreset_H
+#define IPKernelPreset_H
 
 #include <string>
 #include <vector>
@@ -43,4 +43,4 @@ struct IPKernelPreset
     std::vector<int>    kernel;
 };
 
-#endif // IPKERNELPRESET_H
+#endif // IPKernelPreset_H

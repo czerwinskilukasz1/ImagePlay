@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYPOINT_H
-#define IPPROPERTYPOINT_H
+#ifndef IPPropertyPoint_H
+#define IPPropertyPoint_H
 
 #include <QWidget>
 #include <QSlider>
@@ -144,4 +144,4 @@ private:
     QCursor*                    _positionPickCursor;
 };
 
-#endif // IPPROPERTYPOINT_H
+#endif // IPPropertyPoint_H

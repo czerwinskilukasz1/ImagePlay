@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPIMAGEVIEWER_H
-#define IPIMAGEVIEWER_H
+#ifndef IPImageViewer_H
+#define IPImageViewer_H
 
 #include <QFrame>
 #include <QLabel>
@@ -170,4 +170,4 @@ protected:
     virtual void resizeEvent(QResizeEvent *) override;
 };
 
-#endif // IPIMAGEVIEWER_H
+#endif // IPImageViewer_H

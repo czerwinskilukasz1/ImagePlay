@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPHISTOGRAMWIDGET_H
-#define IPHISTOGRAMWIDGET_H
+#ifndef IPHistogramWidget_H
+#define IPHistogramWidget_H
 
 #include <QWidget>
 #include <QHBoxLayout>
@@ -77,4 +77,4 @@ protected:
     void leaveEvent(QEvent *);
 };
 
-#endif // IPHISTOGRAMWIDGET_H
+#endif // IPHistogramWidget_H

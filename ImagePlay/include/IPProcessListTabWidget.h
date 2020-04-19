@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSLISTTABWIDGET_H
-#define IPPROCESSLISTTABWIDGET_H
+#ifndef IPProcessListTabWidget_H
+#define IPProcessListTabWidget_H
 
 #include <QTabWidget>
 #include <QVBoxLayout>
@@ -45,4 +45,4 @@ private:
     MainWindow*     _mainWindow;
 };
 
-#endif // IPPROCESSLISTTABWIDGET_H
+#endif // IPProcessListTabWidget_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYGROUP_H
-#define IPPROPERTYGROUP_H
+#ifndef IPPropertyGroup_H
+#define IPPropertyGroup_H
 
 #include <QWidget>
 #include <QLabel>
@@ -117,4 +117,4 @@ private:
     QStringList             _groupPrefixes;
 };
 
-#endif // IPPROPERTYGROUP_H
+#endif // IPPropertyGroup_H

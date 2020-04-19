@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLACCUMULATE_H
-#define IPLACCUMULATE_H
+#ifndef IPLAccumulate_H
+#define IPLAccumulate_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -50,4 +50,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLACCUMULATE_H
+#endif // IPLAccumulate_H

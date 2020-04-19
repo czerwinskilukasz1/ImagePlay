@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef CONNECTIONDIALOG_H
-#define CONNECTIONDIALOG_H
+#ifndef ConnectionDialog_H
+#define ConnectionDialog_H
 
 #include <QDialog>
 #include <QGridLayout>
@@ -66,4 +66,4 @@ protected:
     void paintEvent(QPaintEvent *);
 };
 
-#endif // CONNECTIONDIALOG_H
+#endif // ConnectionDialog_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLLOADIMAGESEQUENCE_H
-#define IPLLOADIMAGESEQUENCE_H
+#ifndef IPLLoadImageSequence_H
+#define IPLLoadImageSequence_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -60,4 +60,4 @@ protected:
     int                 _sequenceIndex;
 };
 
-#endif // IPLLOADIMAGESEQUENCE_H
+#endif // IPLLoadImageSequence_H

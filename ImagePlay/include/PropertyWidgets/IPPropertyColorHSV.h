@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYCOLORHSV_H
-#define IPPROPERTYCOLORHSV_H
+#ifndef IPPropertyColorHSV_H
+#define IPPropertyColorHSV_H
 
 #include <QWidget>
 #include <QSlider>
@@ -186,4 +186,4 @@ private:
     QColorDialog* _dialog;
 };
 
-#endif // IPPROPERTYCOLORHSV_H
+#endif // IPPropertyColorHSV_H

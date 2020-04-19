@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLPROCESSPROPERTY_H
-#define IPLPROCESSPROPERTY_H
+#ifndef IPLProcessProperty_H
+#define IPLProcessProperty_H
 
 #include "IPLProcess.h"
 #include "IPLColor.h"
@@ -306,4 +306,4 @@ private:
 typedef std::map<std::string, std::shared_ptr<IPLProcessProperty>> IPLProcessPropertyMap;
 
 
-#endif // IPLPROCESSPROPERTY_H
+#endif // IPLProcessProperty_H

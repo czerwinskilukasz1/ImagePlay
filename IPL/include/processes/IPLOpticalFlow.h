@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLOPTICALFLOW_H
-#define IPLOPTICALFLOW_H
+#ifndef IPLOpticalFlow_H
+#define IPLOpticalFlow_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -57,4 +57,4 @@ protected:
 private:
 };
 
-#endif // IPLOPTICALFLOW_H
+#endif // IPLOpticalFlow_H

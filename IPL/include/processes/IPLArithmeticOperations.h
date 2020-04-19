@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLARITHMETICOPERATIONS_H
-#define IPLARITHMETICOPERATIONS_H
+#ifndef IPLArithmeticOperations_H
+#define IPLArithmeticOperations_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -46,4 +46,4 @@ private:
 };
 
 
-#endif // IPLARITHMETICOPERATIONS_H
+#endif // IPLArithmeticOperations_H

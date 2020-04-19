@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLENHANCEMODE_H
-#define IPLENHANCEMODE_H
+#ifndef IPLEnhanceMode_H
+#define IPLEnhanceMode_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -44,4 +44,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLENHANCEMODE_H
+#endif // IPLEnhanceMode_H

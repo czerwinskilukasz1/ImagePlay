@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLLAPLACEOFGAUSSIAN_H
-#define IPLLAPLACEOFGAUSSIAN_H
+#ifndef IPLLaplaceOfGaussian_H
+#define IPLLaplaceOfGaussian_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -48,4 +48,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLLAPLACEOFGAUSSIAN_H
+#endif // IPLLaplaceOfGaussian_H

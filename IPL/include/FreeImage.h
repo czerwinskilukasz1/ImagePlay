@@ -23,8 +23,8 @@
 // Use at your own risk!
 // ==========================================================
 
-#ifndef FREEIMAGE_H
-#define FREEIMAGE_H
+#ifndef FreeImage_H
+#define FreeImage_H
 
 // Version information ------------------------------------------------------
 
@@ -1119,4 +1119,4 @@ DLL_API FIBITMAP *DLL_CALLCONV FreeImage_MultigridPoissonSolver(FIBITMAP *Laplac
 }
 #endif
 
-#endif // FREEIMAGE_H
+#endif // FreeImage_H

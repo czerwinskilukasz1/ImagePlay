@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYRADIOINT_H
-#define IPPROPERTYRADIOINT_H
+#ifndef IPPropertyRadioInt_H
+#define IPPropertyRadioInt_H
 
 #include <QWidget>
 #include <QLabel>
@@ -115,4 +115,4 @@ private:
     bool                        _ignoreEvents;
 };
 
-#endif // IPPROPERTYRADIOINT_H
+#endif // IPPropertyRadioInt_H

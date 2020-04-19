@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLHARRISCORNER_H
-#define IPLHARRISCORNER_H
+#ifndef IPLHarrisCorner_H
+#define IPLHarrisCorner_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -51,4 +51,4 @@ protected:
     IPLImage*               _corners;
 };
 
-#endif // IPLHARRISCORNER_H
+#endif // IPLHarrisCorner_H

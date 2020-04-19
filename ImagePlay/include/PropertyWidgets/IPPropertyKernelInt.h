@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYKERNELINT_H
-#define IPPROPERTYKERNELINT_H
+#ifndef IPPropertyKernelInt_H
+#define IPPropertyKernelInt_H
 
 #include <QWidget>
 #include <QLabel>
@@ -292,4 +292,4 @@ private:
     std::vector<IPKernelPreset> _presets;
 };
 
-#endif // IPPROPERTYKERNELINT_H
+#endif // IPPropertyKernelInt_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IMAGEVIEWERWINDOW_H
-#define IMAGEVIEWERWINDOW_H
+#ifndef ImageViewerWindow_H
+#define ImageViewerWindow_H
 
 #include <QMainWindow>
 #include <QMap>
@@ -164,7 +164,7 @@ protected:
     void closeEvent(QCloseEvent *);
 };
 
-#endif // IMAGEVIEWERWINDOW_H
+#endif // ImageViewerWindow_H
 
 
 

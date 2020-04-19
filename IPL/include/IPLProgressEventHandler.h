@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLPROGRESSEVENTHANDLER_H
-#define IPLPROGRESSEVENTHANDLER_H
+#ifndef IPLProgressEventHandler_H
+#define IPLProgressEventHandler_H
 
 #include "IPL_global.h"
 
@@ -35,4 +35,4 @@ public:
     virtual void updateProgress(int percent) = 0;
 };
 
-#endif // IPLPROGRESSEVENTHANDLER_H
+#endif // IPLProgressEventHandler_H

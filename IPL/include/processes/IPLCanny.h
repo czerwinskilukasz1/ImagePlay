@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLCANNY_H
-#define IPLCANNY_H
+#ifndef IPLCanny_H
+#define IPLCanny_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -66,4 +66,4 @@ private:
     typedef std::deque<Pixel> Queue;
 };
 
-#endif // IPLCANNY_H
+#endif // IPLCanny_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLERRORHANDLER_H
-#define IPLERRORHANDLER_H
+#ifndef IPLErrorHandler_H
+#define IPLErrorHandler_H
 
 #include "IPL_global.h"
 
@@ -35,4 +35,4 @@ public:
     virtual void error() = 0;
 };
 
-#endif // IPLERRORHANDLER_H
+#endif // IPLErrorHandler_H

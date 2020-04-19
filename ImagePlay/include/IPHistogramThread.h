@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPHISTOGRAMTHREAD_H
-#define IPHISTOGRAMTHREAD_H
+#ifndef IPHistogramThread_H
+#define IPHistogramThread_H
 #include <QThread>
 #include <QDebug>
 
@@ -62,4 +62,4 @@ private:
     int             _range;
 };
 
-#endif // IPHISTOGRAMTHREAD_H
+#endif // IPHistogramThread_H

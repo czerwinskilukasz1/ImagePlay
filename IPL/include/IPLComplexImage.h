@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLCOMPLEXIMAGE_H
-#define IPLCOMPLEXIMAGE_H
+#ifndef IPLComplexImage_H
+#define IPLComplexImage_H
 
 #include "IPL_global.h"
 
@@ -69,4 +69,4 @@ private:
     std::mutex          _mutex;
 };
 
-#endif // IPLCOMPLEXIMAGE_H
+#endif // IPLComplexImage_H

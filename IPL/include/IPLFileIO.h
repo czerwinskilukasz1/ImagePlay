@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLFILEIO_H
-#define IPLFILEIO_H
+#ifndef IPLFileIO_H
+#define IPLFileIO_H
 
 #include "IPL_global.h"
 #include "IPLImage.h"
@@ -57,4 +57,4 @@ public:
     static std::string _baseDir;
 };
 
-#endif // IPLFILEIO_H
+#endif // IPLFileIO_H

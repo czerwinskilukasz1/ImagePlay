@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPZOOMWIDGET_H
-#define IPZOOMWIDGET_H
+#ifndef IPZoomWidget_H
+#define IPZoomWidget_H
 
 #include <QWidget>
 #include <QPainter>
@@ -62,4 +62,4 @@ protected:
     void        paintEvent              (QPaintEvent *);
 };
 
-#endif // IPZOOMWIDGET_H
+#endif // IPZoomWidget_H

@@ -16,8 +16,8 @@
 //  along with ImagePlay.  If not, see <http://www.gnu.org/licenses/>.
 //
 //#############################################################################
-#ifndef IPLSAVEIMAGE_H
-#define IPLSAVEIMAGE_H
+#ifndef IPLSaveImage_H
+#define IPLSaveImage_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -49,4 +49,4 @@ protected:
     bool        _preview;
 };
 
-#endif // IPLSAVEIMAGE_H
+#endif // IPLSaveImage_H

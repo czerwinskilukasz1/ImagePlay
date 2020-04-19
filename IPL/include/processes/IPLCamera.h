@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLCAMERA_H
-#define IPLCAMERA_H
+#ifndef IPLCamera_H
+#define IPLCamera_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -49,4 +49,4 @@ protected:
     uint                    _camera_id;
 };
 
-#endif // IPLCAMERA_H
+#endif // IPLCamera_H

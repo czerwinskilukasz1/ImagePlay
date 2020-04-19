@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLSYNTHESIZE_H
-#define IPLSYNTHESIZE_H
+#ifndef IPLSynthesize_H
+#define IPLSynthesize_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -49,4 +49,4 @@ protected:
 };
 
 
-#endif // IPLSYNTHESIZE_H
+#endif // IPLSynthesize_H

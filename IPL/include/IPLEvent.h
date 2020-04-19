@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLEVENT_H
-#define IPLEVENT_H
+#ifndef IPLEvent_H
+#define IPLEvent_H
 
 #include "IPL_global.h"
 #include <string>
@@ -41,4 +41,4 @@ private:
     std::string  _eventName;
 };
 
-#endif // IPLEVENT_H
+#endif // IPLEvent_H

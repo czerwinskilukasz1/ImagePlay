@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLFEATUREMATCHER_H
-#define IPLFEATUREMATCHER_H
+#ifndef IPLFeatureMatcher_H
+#define IPLFeatureMatcher_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -56,4 +56,4 @@ protected:
 private:
 };
 
-#endif // IPLFEATUREMATCHER_H
+#endif // IPLFeatureMatcher_H

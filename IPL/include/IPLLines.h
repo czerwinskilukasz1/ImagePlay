@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLLINES_H
-#define IPLLINES_H
+#ifndef IPLLines_H
+#define IPLLines_H
 
 #include "IPL_global.h"
 
@@ -67,4 +67,4 @@ protected:
     friend class IPLLineFilter;
 };
 
-#endif // IPLLINES_H
+#endif // IPLLines_H

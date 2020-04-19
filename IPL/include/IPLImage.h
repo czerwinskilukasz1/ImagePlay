@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLIMAGE_H
-#define IPLIMAGE_H
+#ifndef IPLImage_H
+#define IPLImage_H
 
 #include "IPL_global.h"
 
@@ -73,4 +73,4 @@ protected:
     std::vector<IPLImagePlane*> _planes;
 };
 
-#endif // IPLIMAGE_H
+#endif // IPLImage_H

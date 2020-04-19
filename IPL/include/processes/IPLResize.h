@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLRESIZE_H
-#define IPLRESIZE_H
+#ifndef IPLResize_H
+#define IPLResize_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -48,4 +48,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLRESIZE_H
+#endif // IPLResize_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLCAMERAIO_H
-#define IPLCAMERAIO_H
+#ifndef IPLCameraIO_H
+#define IPLCameraIO_H
 
 #include "IPL_global.h"
 #include "IPLImage.h"
@@ -42,4 +42,4 @@ private:
     static IPLImage*            _lastFrame;
 };
 
-#endif // IPLCAMERAIO_H
+#endif // IPLCameraIO_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLMEDIAN_H
-#define IPLMEDIAN_H
+#ifndef IPLMedian_H
+#define IPLMedian_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -41,4 +41,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLMEDIAN_H
+#endif // IPLMedian_H

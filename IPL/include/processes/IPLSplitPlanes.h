@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLSPLITPLANES_H
-#define IPLSPLITPLANES_H
+#ifndef IPLSplitPlanes_H
+#define IPLSplitPlanes_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -48,4 +48,4 @@ protected:
 };
 
 
-#endif // IPLSPLITPLANES_H
+#endif // IPLSplitPlanes_H

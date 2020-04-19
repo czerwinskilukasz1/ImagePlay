@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLCONVERTTOCOLOR_H
-#define IPLCONVERTTOCOLOR_H
+#ifndef IPLConvertToColor_H
+#define IPLConvertToColor_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -47,4 +47,4 @@ protected:
 };
 
 
-#endif // IPLCONVERTTOCOLOR_H
+#endif // IPLConvertToColor_H

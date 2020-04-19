@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLCANVASSIZE_H
-#define IPLCANVASSIZE_H
+#ifndef IPLCanvasSize_H
+#define IPLCanvasSize_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -45,4 +45,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLCANVASSIZE_H
+#endif // IPLCanvasSize_H

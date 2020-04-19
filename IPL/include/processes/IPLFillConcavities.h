@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLFILLCONCAVITIES_H
-#define IPLFILLCONCAVITIES_H
+#ifndef IPLFillConcavities_H
+#define IPLFillConcavities_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -43,4 +43,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLFILLCONCAVITIES_H
+#endif // IPLFillConcavities_H

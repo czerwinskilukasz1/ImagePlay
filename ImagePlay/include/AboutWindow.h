@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef ABOUTWINDOW_H
-#define ABOUTWINDOW_H
+#ifndef AboutWindow_H
+#define AboutWindow_H
 
 #include <QDialog>
 
@@ -40,4 +40,4 @@ private:
     Ui::AboutWindow *ui;
 };
 
-#endif // ABOUTWINDOW_H
+#endif // AboutWindow_H

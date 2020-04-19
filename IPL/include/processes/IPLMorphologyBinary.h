@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLMORPHOLOGYBINARY_H
-#define IPLMORPHOLOGYBINARY_H
+#ifndef IPLMorphologyBinary_H
+#define IPLMorphologyBinary_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -47,4 +47,4 @@ protected:
     int                 _iterations;
 };
 
-#endif // IPLMORPHOLOGYBINARY_H
+#endif // IPLMorphologyBinary_H

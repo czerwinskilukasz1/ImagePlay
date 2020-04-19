@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLPROPERTYCHANGEDEVENTHANDLER_H
-#define IPLPROPERTYCHANGEDEVENTHANDLER_H
+#ifndef IPLPropertyChangedEventHandler_H
+#define IPLPropertyChangedEventHandler_H
 
 #include "IPL_global.h"
 
@@ -37,4 +37,4 @@ public:
     virtual void propertyChanged(IPLProcess*) = 0;
 };
 
-#endif // IPLPROPERTYCHANGEDEVENTHANDLER_H
+#endif // IPLPropertyChangedEventHandler_H

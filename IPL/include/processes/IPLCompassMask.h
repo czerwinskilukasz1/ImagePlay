@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLCOMPASSMASK_H
-#define IPLCOMPASSMASK_H
+#ifndef IPLCompassMask_H
+#define IPLCompassMask_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -45,4 +45,4 @@ private:
     static int const        _mask[4][8][3][3];
 };
 
-#endif // IPLCOMPASSMASK_H
+#endif // IPLCompassMask_H

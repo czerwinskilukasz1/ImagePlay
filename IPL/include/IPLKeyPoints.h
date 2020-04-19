@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLKEYPOINTS_H
-#define IPLKEYPOINTS_H
+#ifndef IPLKeyPoints_H
+#define IPLKeyPoints_H
 
 #include "IPL_global.h"
 
@@ -48,4 +48,4 @@ protected:
     std::vector<cv::KeyPoint>           _keypoints;
 };
 
-#endif // IPLKEYPOINTS_H
+#endif // IPLKeyPoints_H

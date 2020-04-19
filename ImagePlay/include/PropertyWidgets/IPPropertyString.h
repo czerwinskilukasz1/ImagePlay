@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYSTRING_H
-#define IPPROPERTYSTRING_H
+#ifndef IPPropertyString_H
+#define IPPropertyString_H
 
 #include <QWidget>
 #include <QHBoxLayout>
@@ -77,4 +77,4 @@ private:
 
 };
 
-#endif // IPPROPERTYSTRING_H
+#endif // IPPropertyString_H

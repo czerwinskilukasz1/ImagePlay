@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYWIDGET_H
-#define IPPROPERTYWIDGET_H
+#ifndef IPPropertyWidget_H
+#define IPPropertyWidget_H
 
 #include <QWidget>
 
@@ -91,4 +91,4 @@ private:
 
 };
 
-#endif // IPPROPERTYWIDGET_H
+#endif // IPPropertyWidget_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSPROPERTIESWIDGET_H
-#define IPPROCESSPROPERTIESWIDGET_H
+#ifndef IPProcessPropertiesWidget_H
+#define IPProcessPropertiesWidget_H
 
 #include <QWidget>
 #include <QFormLayout>
@@ -84,4 +84,4 @@ public slots:
     void                        showPropertyGroup           (QString);
 };
 
-#endif // IPPROCESSPROPERTIESWIDGET_H
+#endif // IPProcessPropertiesWidget_H

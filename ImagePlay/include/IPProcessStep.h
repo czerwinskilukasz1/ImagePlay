@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSSTEP_H
-#define IPPROCESSSTEP_H
+#ifndef IPProcessStep_H
+#define IPProcessStep_H
 
 #include <QGraphicsItem>
 
@@ -113,4 +113,4 @@ protected:
     QVariant                itemChange              (GraphicsItemChange change, const QVariant &value);
 };
 
-#endif // IPPROCESSSTEP_H
+#endif // IPProcessStep_H

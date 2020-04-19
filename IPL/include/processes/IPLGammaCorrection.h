@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLGAMMACORRECTION_H
-#define IPLGAMMACORRECTION_H
+#ifndef IPLGammaCorrection_H
+#define IPLGammaCorrection_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -45,4 +45,4 @@ protected:
     float       _gamma;
 };
 
-#endif // IPLGAMMACORRECTION_H
+#endif // IPLGammaCorrection_H

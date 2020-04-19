@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSGRID_H
-#define IPPROCESSGRID_H
+#ifndef IPProcessGrid_H
+#define IPProcessGrid_H
 
 #include <QGraphicsView>
 #include <QGraphicsScene>
@@ -111,4 +111,4 @@ protected:
 
 };
 
-#endif // IPPROCESSGRID_H
+#endif // IPProcessGrid_H

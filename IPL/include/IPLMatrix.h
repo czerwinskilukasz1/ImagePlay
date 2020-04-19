@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLMATRIX_H
-#define IPLMATRIX_H
+#ifndef IPLMatrix_H
+#define IPLMatrix_H
 
 #include "IPL_global.h"
 
@@ -51,4 +51,4 @@ protected:
     std::vector<ipl_basetype>       _data;
 };
 
-#endif // IPLMATRIX_H
+#endif // IPLMatrix_H

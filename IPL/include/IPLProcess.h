@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLPROCESS_H
-#define IPLPROCESS_H
+#ifndef IPLProcess_H
+#define IPLProcess_H
 
 #include "IPL_global.h"
 #include "IPLEvent.h"
@@ -277,4 +277,4 @@ public:
 
 };
 
-#endif // IPLPROCESS_H
+#endif // IPLProcess_H

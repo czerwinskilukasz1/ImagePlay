@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef PLUGINGENERATOR_H
-#define PLUGINGENERATOR_H
+#ifndef PluginGenerator_H
+#define PluginGenerator_H
 
 #include <QDialog>
 #include <QMessageBox>
@@ -65,4 +65,4 @@ private:
     bool generateFile(QString inputName, QString outputName, QString folder);
 };
 
-#endif // PLUGINGENERATOR_H
+#endif // PluginGenerator_H

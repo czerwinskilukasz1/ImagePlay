@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYSLIDERINT_H
-#define IPPROPERTYSLIDERINT_H
+#ifndef IPPropertySliderInt_H
+#define IPPropertySliderInt_H
 
 #include <QWidget>
 #include <QSlider>
@@ -118,4 +118,4 @@ private:
 
 };
 
-#endif // IPPROPERTYSLIDERINT_H
+#endif // IPPropertySliderInt_H

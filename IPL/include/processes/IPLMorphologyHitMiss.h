@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLMORPHOLOGYHITMISS_H
-#define IPLMORPHOLOGYHITMISS_H
+#ifndef IPLMorphologyHitMiss_H
+#define IPLMorphologyHitMiss_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -49,4 +49,4 @@ protected:
     int                 _maxProgress;
 };
 
-#endif // IPLMORPHOLOGYHITMISS_H
+#endif // IPLMorphologyHitMiss_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSGRIDSCENE_H
-#define IPPROCESSGRIDSCENE_H
+#ifndef IPProcessGridScene_H
+#define IPProcessGridScene_H
 
 #include <QGraphicsScene>
 #include <QMimeData>
@@ -81,4 +81,4 @@ private:
     bool                    _showThumbnails;        //!< Normal or thumbnail rendering mode
 };
 
-#endif // IPPROCESSGRIDSCENE_H
+#endif // IPProcessGridScene_H

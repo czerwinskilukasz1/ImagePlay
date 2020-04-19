@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLCONVERTTOGRAY_H
-#define IPLCONVERTTOGRAY_H
+#ifndef IPLConvertToGray_H
+#define IPLConvertToGray_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -41,4 +41,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLCONVERTTOGRAY_H
+#endif // IPLConvertToGray_H

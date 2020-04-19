@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPLUGINMANAGER_H
-#define IPPLUGINMANAGER_H
+#ifndef IPPluginManager_H
+#define IPPluginManager_H
 
 #include <QString>
 #include <QList>
@@ -60,4 +60,4 @@ private:
     std::vector<IPLProcessDriver*> _drivers;
 };
 
-#endif // IPPLUGINMANAGER_H
+#endif // IPPluginManager_H

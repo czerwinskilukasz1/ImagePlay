@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYCOMBOBOX_H
-#define IPPROPERTYCOMBOBOX_H
+#ifndef IPPropertyCombobox_H
+#define IPPropertyCombobox_H
 
 #include <QWidget>
 #include <QLabel>
@@ -94,4 +94,4 @@ private:
     QComboBox*              _combobox;
 };
 
-#endif // IPPROPERTYCOMBOBOX_H
+#endif // IPPropertyCombobox_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYSLIDERDOUBLE_H
-#define IPPROPERTYSLIDERDOUBLE_H
+#ifndef IPPropertySliderDouble_H
+#define IPPropertySliderDouble_H
 
 #include <QWidget>
 #include <QSlider>
@@ -121,4 +121,4 @@ private:
 
 };
 
-#endif // IPPROPERTYSLIDERDOUBLE_H
+#endif // IPPropertySliderDouble_H

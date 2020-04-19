@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPL_GLOBAL_H
-#define IPL_GLOBAL_H
+#ifndef IPL_global_H
+#define IPL_global_H
 
 // IPL_VERSION should be incremented when changes to IPL
 // interfaces are made in order to check if plugins
@@ -174,4 +174,4 @@ enum IPLEventType
     IPL_EVENT_BUTTON_RELEASED
 };
 
-#endif // IPL_GLOBAL_H
+#endif // IPL_global_H

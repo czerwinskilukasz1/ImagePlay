@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLGAUSSIANLOWPASS_H
-#define IPLGAUSSIANLOWPASS_H
+#ifndef IPLGaussianLowPass_H
+#define IPLGaussianLowPass_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -51,4 +51,4 @@ protected:
     IPLData*                _kernel;
 };
 
-#endif // IPLGAUSSIANLOWPASS_H
+#endif // IPLGaussianLowPass_H

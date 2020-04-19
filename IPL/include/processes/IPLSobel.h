@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLSOBEL_H
-#define IPLSOBEL_H
+#ifndef IPLSobel_H
+#define IPLSobel_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -51,4 +51,4 @@ protected:
     IPLImage*               _corners;
 };
 
-#endif // IPLSOBEL_H
+#endif // IPLSobel_H

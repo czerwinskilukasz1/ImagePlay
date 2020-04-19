@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLLOADIMAGE_H
-#define IPLLOADIMAGE_H
+#ifndef IPLLoadImage_H
+#define IPLLoadImage_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -45,4 +45,4 @@ protected:
     std::string         _path;
 };
 
-#endif // IPLLOADIMAGE_H
+#endif // IPLLoadImage_H

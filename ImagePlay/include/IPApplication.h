@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPAPPLICATION_H
-#define IPAPPLICATION_H
+#ifndef IPApplication_H
+#define IPApplication_H
 
 #include <QApplication>
 #include <QMessageBox>
@@ -33,4 +33,4 @@ public:
 //    bool notify(QObject *, QEvent *);
 };
 
-#endif // IPAPPLICATION_H
+#endif // IPApplication_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLMORPHOLOGYGRAYSCALE_H
-#define IPLMORPHOLOGYGRAYSCALE_H
+#ifndef IPLMorphologyGrayscale_H
+#define IPLMorphologyGrayscale_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -51,4 +51,4 @@ protected:
     int                 _iterations;
 };
 
-#endif // IPLMORPHOLOGYGRAYSCALE_H
+#endif // IPLMorphologyGrayscale_H

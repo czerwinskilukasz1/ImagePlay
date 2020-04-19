@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLFREQUENCYFILTER_H
-#define IPLFREQUENCYFILTER_H
+#ifndef IPLFrequencyFilter_H
+#define IPLFrequencyFilter_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -49,4 +49,4 @@ protected:
     IPLImage*               _filter;
 };
 
-#endif // IPLFREQUENCYFILTER_H
+#endif // IPLFrequencyFilter_H

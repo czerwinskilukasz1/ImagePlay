@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLMATCHTEMPLATE_H
-#define IPLMATCHTEMPLATE_H
+#ifndef IPLMatchTemplate_H
+#define IPLMatchTemplate_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -51,4 +51,4 @@ protected:
     IPLImage*               _overlay;
 };
 
-#endif // IPLMATCHTEMPLATE_H
+#endif // IPLMatchTemplate_H

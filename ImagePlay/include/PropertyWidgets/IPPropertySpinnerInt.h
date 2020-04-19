@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYSPINNERINT_H
-#define IPPROPERTYSPINNERINT_H
+#ifndef IPPropertySpinnerInt_H
+#define IPPropertySpinnerInt_H
 
 #include <QWidget>
 #include <QSlider>
@@ -85,4 +85,4 @@ private:
 typedef IPPropertySpinnerImpl<IPLProcessPropertyInt> IPPropertySpinnerInt;
 typedef IPPropertySpinnerImpl<IPLProcessPropertyUnsignedInt> IPPropertySpinnerUnsignedInt;
 
-#endif // IPPROPERTYSPINNERINT_H
+#endif // IPPropertySpinnerInt_H

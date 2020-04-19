@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLINVERSECONTRASTRATIOMAPPING_H
-#define IPLINVERSECONTRASTRATIOMAPPING_H
+#ifndef IPLInverseContrastRatioMapping_H
+#define IPLInverseContrastRatioMapping_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -48,4 +48,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLINVERSECONTRASTRATIOMAPPING_H
+#endif // IPLInverseContrastRatioMapping_H

@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLORIENTEDIMAGE_H
-#define IPLORIENTEDIMAGE_H
+#ifndef IPLOrientedImage_H
+#define IPLOrientedImage_H
 
 #include "IPL_global.h"
 
@@ -39,4 +39,4 @@ public:
     ipl_basetype& phase(int x, int y);
 };
 
-#endif // IPLORIENTEDIMAGE_H
+#endif // IPLOrientedImage_H

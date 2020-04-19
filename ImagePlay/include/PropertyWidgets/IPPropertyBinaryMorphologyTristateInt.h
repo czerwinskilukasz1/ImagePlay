@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYBINARYMORPHOLOGYTRISTATEINT_H
-#define IPPROPERTYBINARYMORPHOLOGYTRISTATEINT_H
+#ifndef IPPropertyBinaryMorphologyTristateInt_H
+#define IPPropertyBinaryMorphologyTristateInt_H
 
 #include <QWidget>
 #include <QLabel>
@@ -337,4 +337,4 @@ private:
     std::vector<IPKernelPreset> _presets;
 };
 
-#endif // IPPROPERTYBINARYMORPHOLOGYTRISTATEINT_H
+#endif // IPPropertyBinaryMorphologyTristateInt_H

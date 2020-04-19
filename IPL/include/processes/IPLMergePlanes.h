@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLMERGEPLANES_H
-#define IPLMERGEPLANES_H
+#ifndef IPLMergePlanes_H
+#define IPLMergePlanes_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -49,4 +49,4 @@ protected:
     int         _inputType;
 };
 
-#endif // IPLMERGEPLANES_H
+#endif // IPLMergePlanes_H

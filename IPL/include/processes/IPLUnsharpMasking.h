@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLUNSHARPMASKING_H
-#define IPLUNSHARPMASKING_H
+#ifndef IPLUnsharpMasking_H
+#define IPLUnsharpMasking_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -41,4 +41,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLUNSHARPMASKING_H
+#endif // IPLUnsharpMasking_H

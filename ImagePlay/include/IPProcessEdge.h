@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROCESSEDGE_H
-#define IPPROCESSEDGE_H
+#ifndef IPProcessEdge_H
+#define IPProcessEdge_H
 
 #include <QGraphicsItem>
 
@@ -67,4 +67,4 @@ protected:
     QVariant            itemChange         (GraphicsItemChange change, const QVariant &value);
 };
 
-#endif // IPPROCESSEDGE_H
+#endif // IPProcessEdge_H

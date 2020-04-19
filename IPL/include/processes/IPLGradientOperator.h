@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLGRADIENTOPERATOR_H
-#define IPLGRADIENTOPERATOR_H
+#ifndef IPLGradientOperator_H
+#define IPLGradientOperator_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -55,4 +55,4 @@ private:
     bool cubicSpline(IPLImage* data);
 };
 
-#endif // IPLGRADIENTOPERATOR_H
+#endif // IPLGradientOperator_H

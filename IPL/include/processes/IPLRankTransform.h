@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLRANKTRANSFORM_H
-#define IPLRANKTRANSFORM_H
+#ifndef IPLRankTransform_H
+#define IPLRankTransform_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -41,4 +41,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLRANKTRANSFORM_H
+#endif // IPLRankTransform_H

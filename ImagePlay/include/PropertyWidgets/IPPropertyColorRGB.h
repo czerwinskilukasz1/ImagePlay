@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPPROPERTYCOLORRGB_H
-#define IPPROPERTYCOLORRGB_H
+#ifndef IPPropertyColorRGB_H
+#define IPPropertyColorRGB_H
 
 #include <QWidget>
 #include <QSlider>
@@ -238,4 +238,4 @@ private:
     QColorDialog* _dialog;
 };
 
-#endif // IPPROPERTYCOLORRGB_H
+#endif // IPPropertyColorRGB_H

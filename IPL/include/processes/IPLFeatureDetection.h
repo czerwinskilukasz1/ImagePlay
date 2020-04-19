@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLFEATUREDETECTION_H
-#define IPLFEATUREDETECTION_H
+#ifndef IPLFeatureDetection_H
+#define IPLFeatureDetection_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -54,4 +54,4 @@ protected:
 private:
 };
 
-#endif // IPLFEATUREDETECTION_H
+#endif // IPLFeatureDetection_H

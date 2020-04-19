@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef MainWindow_H
+#define MainWindow_H
 
 #include <QMainWindow>
 #include <QLabel>
@@ -225,7 +225,7 @@ protected:
     void                    keyPressEvent                   (QKeyEvent *);
 };
 
-#endif // MAINWINDOW_H
+#endif // MainWindow_H
 
 
 

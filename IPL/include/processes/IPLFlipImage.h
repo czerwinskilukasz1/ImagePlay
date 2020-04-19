@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLFLIPIMAGE_H
-#define IPLFLIPIMAGE_H
+#ifndef IPLFlipImage_H
+#define IPLFlipImage_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -44,4 +44,4 @@ protected:
     IPLImage*               _result;
 };
 
-#endif // IPLFLIPIMAGE_H
+#endif // IPLFlipImage_H

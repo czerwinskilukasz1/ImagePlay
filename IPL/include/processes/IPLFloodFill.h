@@ -17,8 +17,8 @@
 //
 //#############################################################################
 
-#ifndef IPLFLOODFILL_H
-#define IPLFLOODFILL_H
+#ifndef IPLFloodFill_H
+#define IPLFloodFill_H
 
 #include "IPL_global.h"
 #include "IPLProcess.h"
@@ -51,4 +51,4 @@ protected:
     IPLImage*               _corners;
 };
 
-#endif // IPLFLOODFILL_H
+#endif // IPLFloodFill_H
