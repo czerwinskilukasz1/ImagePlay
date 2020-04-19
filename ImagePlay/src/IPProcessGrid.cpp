@@ -19,6 +19,7 @@
 
 #include "IPProcessGrid.h"
 
+
 IPProcessGrid::IPProcessGrid(QWidget *parent) : QGraphicsView(parent)
 {
     _scene = new IPProcessGridScene(this);
@@ -30,7 +31,7 @@ IPProcessGrid::IPProcessGrid(QWidget *parent) : QGraphicsView(parent)
     //setCacheMode(QGraphicsView::CacheBackground);
     centerOn(0,0);
 
-    setDragMode(QGraphicsView::RubberBandDrag);
+    setDragMode(QGraphicsView::ScrollHandDrag);
     setMouseTracking(true);
 
     _scale = 1.0;
@@ -516,6 +517,18 @@ void IPProcessGrid::showEvent(QShowEvent *e)
 void IPProcessGrid::resizeEvent(QResizeEvent *)
 {
    fitLargeSceneRect();
+}
+
+void IPProcessGrid::mousePressEvent(QMouseEvent *event)
+{
+    // Choose drag mode based on which button was clicked.
+    if(event->button() == Qt::RightButton)
+    {
+        setDragMode(DragMode::RubberBandDrag);
+    } else {
+        setDragMode(DragMode::ScrollHandDrag);
+    }
+    QGraphicsView::mousePressEvent(event);
 }
 
 /*!

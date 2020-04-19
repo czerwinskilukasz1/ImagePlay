@@ -25,7 +25,7 @@
 #include <QHBoxLayout>
 
 //-----------------------------------------------------------------------------
-//!Custom QLineEdit which contains a small reset button
+//!Custom QLineEdit which contains a small reset button. It is used to filter process list in the left panel.
 class IPFilterLineEdit : public QLineEdit
 {
     Q_OBJECT

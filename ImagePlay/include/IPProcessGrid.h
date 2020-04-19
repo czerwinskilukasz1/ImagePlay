@@ -106,6 +106,9 @@ protected:
     virtual void            keyPressEvent           (QKeyEvent *)       override;
     virtual void            keyReleaseEvent         (QKeyEvent *)       override;
     virtual void            showEvent               (QShowEvent *)      override;
+
+    virtual void            mousePressEvent      (QMouseEvent *event)   override;
+
 };
 
 #endif // IPPROCESSGRID_H
