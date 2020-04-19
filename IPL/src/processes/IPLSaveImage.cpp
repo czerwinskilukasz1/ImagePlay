@@ -53,7 +53,7 @@ void IPLSaveImage::init()
     addProcessPropertyInt("png_type", "PNG Type:DEFAULT|INTERLACED", "", _png_type, IPL_WIDGET_RADIOBUTTONS);
     addProcessPropertyInt("pnm_type", "PNM Type:RAW|ASCII", "", _pnm_type, IPL_WIDGET_RADIOBUTTONS);
 
-    addProcessPropertyBool("preview", "Don't save, only Preview", "", _preview, IPL_WIDGET_CHECKBOXES);
+    addProcessPropertyBool("preview", "Preview Only", "", _preview, IPL_WIDGET_CHECKBOXES);
 
     // BMP_DEFAULT|BMP_SAVE_RLE|EXR|J2K|JPEG|JPEG_PROGRESSIVE|
     // PNG_DEFAULT|PNG_INTERLACED|PNM_SAVE_RAW|PNM_SAVE_ASCII|
