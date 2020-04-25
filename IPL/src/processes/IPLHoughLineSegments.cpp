@@ -82,14 +82,14 @@ bool IPLHoughLineSegments::processInputData(IPLData* data, int, bool)
     int maxLineGap          = getProcessPropertyInt("maxLineGap");
 
     notifyProgressEventHandler(-1);
-    cv::Mat input;
-    cv::Mat overlay = image->toCvMat();
+    cv::Mat input = image->toCvMat();
+    cv::Mat overlay = input.clone();
     cv::Mat result = cv::Mat(image->height(), image->width(), CV_8UC1);
     result = cv::Scalar(0);
-    cvtColor(image->toCvMat(), input, cv::COLOR_BGR2GRAY);
     overlay.convertTo(overlay, CV_8UC3);
 
     cv::HoughLinesP(input, lines, rho, theta, threshold, minLength, maxLineGap);
+    notifyProgressEventHandler(50);
 
     std::stringstream s;
     s << "Lines found: ";
@@ -104,11 +104,12 @@ bool IPLHoughLineSegments::processInputData(IPLData* data, int, bool)
        // raw result
        cv::line(result, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]), cv::Scalar(255), 1, cv::LINE_AA);
      }
+    notifyProgressEventHandler(90);
 
     _overlay = new IPLImage(overlay);
     _result = new IPLImage(result);
     _lines = new IPLLines(lines, image->width(), image->height());
-
+    
 	return true;
 }
 

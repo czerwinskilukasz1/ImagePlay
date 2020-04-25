@@ -61,10 +61,10 @@ bool IPLHoughLines::processInputData(IPLData* data, int, bool)
 
     // WARNING: cv::HoughLines does not work in debug mode!!!
     //          destroys the std::vector<cv::Vec4i> lines;
-#ifdef _DEBUG
-    addError("cv::HoughLines does not work in debug mode");
-    return false;
-#endif
+//#ifdef _DEBUG
+//    addError("cv::HoughLines does not work in debug mode");
+//    return false;
+//#endif
 
     // get properties
     double rho              = getProcessPropertyDouble("rho");
@@ -74,21 +74,21 @@ bool IPLHoughLines::processInputData(IPLData* data, int, bool)
     //int maxLineGap          = getProcessPropertyInt("maxLineGap");
 
     notifyProgressEventHandler(-1);
-    cv::Mat input;
-    cv::Mat overlay = image->toCvMat();
     cv::Mat result = cv::Mat(image->height(), image->width(), CV_8UC1);
     result = cv::Scalar(0);
-    cvtColor(image->toCvMat(), input, cv::COLOR_BGR2GRAY);
-    overlay.convertTo(overlay, CV_8UC3);
+    cv::Mat input = image->toCvMat();
 
     std::vector<cv::Vec2f> lines;
     cv::HoughLines(input, lines, rho, theta, threshold);
-
+    notifyProgressEventHandler(50);
 
     std::stringstream s;
     s << "Lines found: ";
     s << lines.size();
     addInformation(s.str());
+
+    cv::Mat overlay = input.clone();
+    overlay.convertTo(overlay, CV_8UC3);
 
     for(int i = 0; i < (int) lines.size(); i++ )
     {
@@ -105,6 +105,7 @@ bool IPLHoughLines::processInputData(IPLData* data, int, bool)
        // raw result
        cv::line(result, pt1, pt2, cv::Scalar(255), 1, cv::LINE_AA);
      }
+    notifyProgressEventHandler(90);
 
     _overlay = new IPLImage(overlay);
     _result = new IPLImage(result);
