@@ -1,0 +1,15 @@
+== Compiling with Visual Studio 2019 ==
+
+The project opens, compiles and runs successfully under Virual Studio 2019, as of Apr 25, 2020.
+
+Requirements:
+  QT Visual Studio Tools, available at: https://marketplace.visualstudio.com/items?itemName=TheQtCompany.QtVisualStudioTools2019
+
+Known issues:
+
+  Issue 1. 
+    *Sometimes* Visual Studio complains there is no reference to an object when user tries to build the project.  
+    
+  Solution 1: 
+    For some reason opening ImagePlay/ImagePlay.vcxproj instead of the .sln file fixes the issue.  
+    Please note that even if you open the .vcxproj project file, the whole solution gets loaded, so you can build&run the whole ImagePlay straightaway.

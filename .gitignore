@@ -40,9 +40,12 @@ Makefile.Debug
 Makefile.Release
 
 # Windows
-*.sln
+#*.sln  # we DO want to save VS solution files, similar as we save .pro files
 #*.vcxproj
 *.vcxproj.filters
+.vs/
+IPL/x64/
+ImagePlay/x64/
 
 # temporary and html doc files
 intermediate/
@@ -59,4 +62,5 @@ ImagePlay/object_script.ImagePlay.Debug
 ImagePlay/object_script.ImagePlay.Release
 object_script.IPL.Debug
 object_script.IPL.Release
+_fervor/out/
 

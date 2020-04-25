@@ -1,0 +1,34 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IPL", "IPL\IPL.vcxproj", "{A22661D6-D6CB-3853-B78F-A850FC6333C1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImagePlay", "ImagePlay\ImagePlay.vcxproj", "{574DEBF8-59EC-360D-831E-8150BA491F7D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A22661D6-D6CB-3853-B78F-A850FC6333C1} = {A22661D6-D6CB-3853-B78F-A850FC6333C1}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A22661D6-D6CB-3853-B78F-A850FC6333C1}.Debug|x64.ActiveCfg = Debug|x64
+		{A22661D6-D6CB-3853-B78F-A850FC6333C1}.Debug|x64.Build.0 = Debug|x64
+		{A22661D6-D6CB-3853-B78F-A850FC6333C1}.Release|x64.ActiveCfg = Release|x64
+		{A22661D6-D6CB-3853-B78F-A850FC6333C1}.Release|x64.Build.0 = Release|x64
+		{574DEBF8-59EC-360D-831E-8150BA491F7D}.Debug|x64.ActiveCfg = Debug|x64
+		{574DEBF8-59EC-360D-831E-8150BA491F7D}.Debug|x64.Build.0 = Debug|x64
+		{574DEBF8-59EC-360D-831E-8150BA491F7D}.Release|x64.ActiveCfg = Release|x64
+		{574DEBF8-59EC-360D-831E-8150BA491F7D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		Qt5Version = msvc2017_64
+		SolutionGuid = {3B00F9E1-D292-4994-B15A-3FD7E980E45A}
+	EndGlobalSection
+EndGlobal
