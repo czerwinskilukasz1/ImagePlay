@@ -62,6 +62,9 @@ public:
 
     std::string                 toString(int x, int y);
 
+    /**
+     * @brief returns a copy of data as cv::Mat
+     */
     cv::Mat                     toCvMat();
 
 protected:

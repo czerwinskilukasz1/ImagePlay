@@ -68,11 +68,10 @@ bool IPLHoughCircles::processInputData(IPLData* data, int, bool)
     int minDist              = getProcessPropertyInt("minDist");
 
     notifyProgressEventHandler(-1);
-    cv::Mat input;
-    cv::Mat overlay = image->toCvMat();
+    cv::Mat input = image->toCvMat();
+    cv::Mat overlay = input.clone();
     cv::Mat result = cv::Mat(image->height(), image->width(), CV_8UC1);
     result = cv::Scalar(0);
-    cvtColor(image->toCvMat(), input, cv::COLOR_BGR2GRAY);
     overlay.convertTo(overlay, CV_8UC3);
 
     std::vector<cv::Vec3f> circles;

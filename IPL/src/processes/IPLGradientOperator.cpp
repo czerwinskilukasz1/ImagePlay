@@ -155,10 +155,9 @@ bool IPLGradientOperator::roberts(IPLImage* image)
 
     notifyProgressEventHandler(-1);
 
-    cv::Mat input;
+    cv::Mat input = image->toCvMat();
     cv::Mat gX;
     cv::Mat gY;
-    cvtColor(image->toCvMat(),input,cv::COLOR_BGR2GRAY);
 
     filter2D(input,gX,CV_32F,rxKernel);
     filter2D(input,gY,CV_32F,ryKernel);
@@ -201,10 +200,9 @@ bool IPLGradientOperator::sobel(IPLImage* image)
 
    notifyProgressEventHandler(-1);
 
-   cv::Mat input;
+   cv::Mat input = image->toCvMat();
    cv::Mat gX;
    cv::Mat gY;
-   cvtColor(image->toCvMat(),input,cv::COLOR_BGR2GRAY);
  
    Sobel(input,gX,CV_32F,1,0,kSize);
    Sobel(input,gY,CV_32F,0,1,kSize);
@@ -252,7 +250,7 @@ bool IPLGradientOperator::cubicSpline(IPLImage* image)
 
    for (int i=0;i<width;i++)
       for (int j=0;j<height;j++)
-         coeffFull.at<cv::Vec<float,1>>(i,j)[0] = static_cast<float>(input.at<cv::Vec<unsigned char,4>>(i,j).val[0]) * FACTOR_TO_FLOAT ;
+         coeffFull.at<cv::Vec<float,1>>(i,j)[0] = static_cast<float>(input.at<cv::Vec<unsigned char,1>>(i,j).val[0]) * FACTOR_TO_FLOAT ;
  
    float dx,dy,x3,x2,y3,y2,xf,yf;
    
