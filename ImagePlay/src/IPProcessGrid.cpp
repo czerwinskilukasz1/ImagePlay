@@ -373,13 +373,10 @@ void IPProcessGrid::execute(bool forcedUpdate /* = false*/)
     while (it2.hasNext())
     {
         IPProcessStep* step = it2.next();
+        if (step->process()->updateNeeded()) {
+            step->updateThumbnail();
+        }
         step->process()->setUpdateNeeded(false);
-    }
-    QListIterator<IPProcessStep *> it3(_processList);
-    while (it3.hasNext())
-    {
-        IPProcessStep* step = it3.next();
-        step->updateThumbnail();
         step->process()->afterProcessing();
     }
 
