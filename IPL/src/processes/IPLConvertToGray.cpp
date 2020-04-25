@@ -28,7 +28,7 @@ void IPLConvertToGray::init()
     setClassName("IPLConvertToGray");
     setTitle("Convert to Gray");
     setKeywords("grayscale");
-    setDescription("Converts an image with the color format binary, gray-scale, or color to a gray-scale image."
+    setDescription("Converts an image with the color format binary, gray-scale, or color to a gray-scale image.\n"
                    "Default weights based on human eye perception:\nR: 0.2125\nG: 0.7154\nB: 0.0721");
     setCategory(IPLProcess::CATEGORY_CONVERSIONS);
 

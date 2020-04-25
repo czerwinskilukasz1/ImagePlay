@@ -530,6 +530,7 @@ void MainWindow::loadProcesses()
     _factory->registerProcess("IPLGoodFeaturesToTrack", new IPLGoodFeaturesToTrack);
 
     _factory->registerProcess("IPLLineFilter", new IPLLineFilter);
+    _factory->registerProcess("IPLAdaptiveThreshold", new IPLAdaptiveThreshold);
 
     // not ready:
     /*_factory->registerProcess("IPLMatchTemplate",       new IPLMatchTemplate);
