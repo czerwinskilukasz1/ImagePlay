@@ -47,10 +47,12 @@ DEFINES += IPL_LIBRARY
 HEADERS += $$files(*.h,true) \
     include/IPLLine.h \
     include/IPLLines.h \
+    include/processes/IPLAdaptiveThreshold.h \
     include/processes/IPLLineFilter.h
 SOURCES += $$files(*.cpp,true) \
     src/IPLLine.cpp \
     src/IPLLines.cpp \
+    src/processes/IPLAdaptiveThreshold.cpp \
     src/processes/IPLLineFilter.cpp
 OTHER_FILES += $$files(*,true)
 

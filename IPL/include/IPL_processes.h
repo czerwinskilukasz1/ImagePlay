@@ -110,5 +110,6 @@
 #include "IPLCameraCalibration.h"
 
 #include "IPLLineFilter.h"
+#include "IPLAdaptiveThreshold.h"
 
 #endif // IPL_H

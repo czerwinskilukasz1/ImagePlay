@@ -182,30 +182,129 @@ std::string IPLImage::toString(int x, int y)
 
 cv::Mat IPLImage::toCvMat()
 {
-    cv::Mat mat(_height, _width, CV_8UC4, rgb32());
+    // determine dimensions of the output image
 
-    // slower float version
-    /*
-    cv::Mat mat(_height, _width, CV_32FC3);
-    for(int y = 0; y<_height; y++)
+    int noOfOutputPlanes;
+
+    if (_type == IPL_IMAGE_ORIENTED)
+        noOfOutputPlanes = 4;
+    else
+        noOfOutputPlanes = getNumberOfPlanes();
+
+
+    int type;
+    switch(noOfOutputPlanes) {
+    case 1: type = CV_8UC1; break;
+    case 2: type = CV_8UC2; break;
+    case 3: type = CV_8UC3; break;
+    case 4: type = CV_8UC4; break;
+    default: assert(false); // this shouldn't happen as image has always 1-4 dimensions
+    }
+
+    // prepare a temporary data structure
+    std::vector<uchar> data;
+    data.resize(_height * _width * noOfOutputPlanes);
+
+
+    // rgb32() cannot be used to fill the data because it always returns a 4-channel Mat,
+    // even for grayscale/b&w images.
+    // We need to fill in Mat manually.
+
+    if(_type == IPL_IMAGE_BW)
     {
-        for(int x = 0; x<_width; x++)
+        int i=0;
+        for(int y=0; y < _height; y++)
         {
-            float r = _planes[0]->p(x,y);
-            float g = _planes[1]->p(x,y);
-            float b = _planes[2]->p(x,y);
-
-            cv::Vec3f value;
-            value.val[0] = b;
-            value.val[1] = g;
-            value.val[2] = r;
-
-            mat.at<cv::Vec3f>(y, x) = value;
+            for(int x=0; x < _width; x++)
+            {
+                uchar val = plane(0)->p(x,y) * FACTOR_TO_UCHAR;
+                val = val < 0x80 ? 0x00 : 0xFF;
+                data[i++] = val;
+            }
         }
-    }*/
+    }
+    else if(_type == IPL_IMAGE_GRAYSCALE)
+    {
+        int i=0;
+        for(int y=0; y < _height; y++)
+        {
+            for(int x=0; x < _width; x++)
+            {
+                uchar val = (plane(0)->p(x,y) * FACTOR_TO_UCHAR);
+                data[i++] = val;
+            }
+        }
+    }
+    else if(_type == IPL_IMAGE_COLOR)
+    {
+        int i=0;
+        for(int y=0; y < _height; y++)
+        {
+            for(int x=0; x < _width; x++)
+            {
+                // TODO: It should actually be faster if we iterate over planes first due to memory cache in the processor.
 
-    return mat;
+                uchar r = plane(0)->p(x,y) * FACTOR_TO_UCHAR;
+                uchar g = plane(1)->p(x,y) * FACTOR_TO_UCHAR;
+                uchar b = plane(2)->p(x,y) * FACTOR_TO_UCHAR;
+
+                data[i++] = b;
+                data[i++] = g;
+                data[i++] = r;
+
+                if (getNumberOfPlanes() == 4)
+                    data[i++] = 0xFF;
+            }
+        }
+    }
+    else if(_type == IPL_IMAGE_ORIENTED)
+    {
+        // Always 4 output planes
+
+        double maxMag = 0.0;
+        for(int x=0; x<_width; x++)
+            for(int y=0; y<_height; y++)
+                if( plane(0)->p(x,y) > maxMag ) maxMag = plane(0)->p(x,y);
+
+        int i=0;
+        for(int y=0; y < _height; y++)
+        {
+            for(int x=0; x < _width; x++)
+            {
+                ipl_basetype phase = fmod(plane(1)->p(x,y), 1.0);
+                ipl_basetype magnitude = plane(0)->p(x,y) / maxMag;
+
+                if(phase < 0)
+                    phase = 0;
+                if(phase > 1)
+                    phase = 1;
+
+                IPLColor color = IPLColor::fromHSV(phase, 1.0,  magnitude);
+
+                uchar r = color.red()   * FACTOR_TO_UCHAR;
+                uchar g = color.green() * FACTOR_TO_UCHAR;
+                uchar b = color.blue()  * FACTOR_TO_UCHAR;
+                data[i++] = b;
+                data[i++] = g;
+                data[i++] = r;
+                data[i++] = 0xFF;
+            }
+        }
+    }
+
+    // create a Mat (this constructor does NOT copy the underlying array)
+    cv::Mat mat(_height, _width, type, data.data());
+
+    // We need to get a copy of the data so that we don't use local data.
+    // Of course it would be faster to allocate 'data' dynamically but then we would need to
+    // take care of deallocating it when the return Mat is gone, which would need some more changes in ImagePlay,
+    // e.g. creating a MatHolder type, which deallocates the underlying data on destruction.
+    // Premature optimization is evil, so for now we will just leave it like this.
+    cv::Mat mat_ret = mat.clone();
+
+    return mat_ret;
 }
+
 
 uchar* IPLImage::rgb32()
 {

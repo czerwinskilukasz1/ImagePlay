@@ -28,7 +28,7 @@ void IPLHysteresisThreshold::init()
     setClassName("IPLHysteresisThreshold");
     setTitle("Hysteresis Threshold");
     setCategory(IPLProcess::CATEGORY_POINTOPERATIONS);
-    setDescription("Hysteresis thersholding of edge pixels. Starting at pixels with a "
+    setDescription("Hysteresis thresholding of edge pixels. Starting at pixels with a "
                    "value greater than the high threshold, trace a connected sequence "
                    "of pixels that have a value greater than the low threhsold.");
 

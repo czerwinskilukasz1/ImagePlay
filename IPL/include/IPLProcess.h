@@ -140,6 +140,11 @@ public:
     virtual void            afterProcessing             () {}
 
     void                    registerProgressEventHandler(IPLProgressEventHandler* handler);
+
+    /**
+     * @brief notifyProgressEventHandler
+     * @param percent -1 for not defined, 0-100 for progress
+     */
     void                    notifyProgressEventHandler(int percent);
     void                    registerPropertyChangedEventHandler(IPLPropertyChangedEventHandler* handler);
     void                    notifyPropertyChangedEventHandler();
