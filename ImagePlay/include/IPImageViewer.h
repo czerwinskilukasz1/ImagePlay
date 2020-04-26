@@ -133,13 +133,18 @@ public slots:
     void on_mouseDoubleClicked();
 
 private:
-    QImage*             _image;
-    IPLImage*           _rawImage;
-    IPLComplexImage*    _rawComplexImage;
-    IPLData*            _rawData;
+    QImage*             _image; // owning pointer
+    IPLImage*           _rawImage; // non-owning pointer
+    IPLComplexImage*    _rawComplexImage; // non-owning pointer
+    IPLData*            _rawData; // non-owning pointer
     QPixmap             _pixmap;
     IPPixmapItem*       _pixmapItem;
     IPProcessStep*      _processStep;
+    
+    // These two variables are used to prevent from updating the image when it's not needed.
+    IPLProcess*         _updatedImageProcess;
+    uint32_t            _updatedImageUpdateID;
+
     IPImageViewerGraphicsView*      _graphicsView;
     QGraphicsScene*     _graphicsScene;
     int                 _resultIndex;

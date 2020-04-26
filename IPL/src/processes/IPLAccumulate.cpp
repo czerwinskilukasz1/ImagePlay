@@ -102,7 +102,7 @@ bool IPLAccumulate::processInputData(IPLData* data , int, bool)
     return true;
 }
 
-IPLData* IPLAccumulate::getResultData( int )
+IPLData* IPLAccumulate::getResultData(int)
 {
     return _result;
 }

@@ -136,7 +136,11 @@ public:
     virtual void            beforeProcessing            () {}
     virtual bool            processInputData            (IPLData*, int, bool) = 0;
     virtual void            processPropertyEvents       (IPLEvent*) {}
-    virtual IPLData*        getResultData               (int outputIndex ) = 0;
+
+    /**
+      * @brief Returns a non-owning pointer to the data.
+      */
+    virtual IPLData*        getResultData               (int outputIndex) = 0;
     virtual void            afterProcessing             () {}
 
     void                    registerProgressEventHandler(IPLProgressEventHandler* handler);
@@ -154,12 +158,18 @@ public:
     IPLProcessPropertyMap*  properties();
     IPLProcessProperty*     property(std::string key);
     void                    setProperty(std::string key, IPLProcessProperty* value);
-    bool                    isResultReady()                     { return _resultReady; }
+    bool                    isResultReady() const               { return _resultReady; }
     void                    setResultReady(bool ready)          { _resultReady = ready; }
-    bool                    updateNeeded()                      { return _updateNeeded; }
-    void                    setUpdateNeeded(bool update)        { _updateNeeded = update; }
+    bool                    updateNeeded() const                { return _updateNeeded; }
+    void                    setUpdateNeeded(bool update)        {
+        // TODO: think over whether this block should be wrapped in a mutex
+        _updateNeeded = update;
+        if (_updateNeeded) {
+            ++_updateID;
+        }
+    }
     void                    requestUpdate();
-    void                    requestUpdate(long updateID);
+    uint32_t                updateID() const { return _updateID; }
 
     void                    resetMessages();
     void                    addMessage(IPLProcessMessage msg);
@@ -233,6 +243,11 @@ private:
     bool                            _isSequence;
     bool                            _resultReady;
     bool                            _updateNeeded;
+
+    /**
+     * @brief always greater than zero; used by various components to figure out whether a new update was issued
+     */
+    uint32_t                        _updateID;
     IPLProgressEventHandler*        _progressHandler;
     IPLPropertyChangedEventHandler* _propertyHandler;
     IPLOutputsChangedEventHandler*  _outputsHandler;

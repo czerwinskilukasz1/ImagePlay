@@ -25,6 +25,7 @@ IPLProcess::IPLProcess(void)
     _isSequence         = false;
     _resultReady        = false;
     _updateNeeded       = true;
+    _updateID           = 1;
     _openCVSupport      = IPLProcess::OPENCV_NONE;
     _progressHandler    = NULL;
     _propertyHandler    = NULL;
@@ -44,6 +45,8 @@ IPLProcess::IPLProcess(const IPLProcess &other)
     _isSource           = other._isSource;
     _isSequence         = other._isSequence;
     _resultReady        = other._resultReady;
+    _updateNeeded       = other._updateNeeded;
+    _updateID           = other._updateID;
     _title              = other._title;
     _category           = other._category;
     _keywords           = other._keywords;
@@ -66,6 +69,8 @@ IPLProcess::IPLProcess(IPLProcess &&other):
     _isSource(std::move(other._isSource)),
     _isSequence(std::move(other._isSequence)),
     _resultReady(std::move(other._resultReady)),
+    _updateNeeded(std::move(other._updateNeeded)),
+    _updateID(std::move(other._updateID)),
     _title(std::move(other._title)),
     _category(std::move(other._category)),
     _keywords(std::move(other._keywords)),

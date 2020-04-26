@@ -34,6 +34,10 @@ IPImageViewer::IPImageViewer(ImageViewerWindow* imageViewer, QWidget *parent) :
     //layout()->setContentsMargins(0,0,0,0);
 
     _processStep = NULL;
+    
+    _updatedImageProcess = NULL;
+    _updatedImageUpdateID = 0;
+
     _image = NULL;
     _rawData = NULL;
     _rawImage = NULL;
@@ -85,155 +89,163 @@ void IPImageViewer::updateImage()
 {
     if(_processStep && _processStep->process() && _processStep->process()->isResultReady())
     {
-        // delete last image
-        delete _image;
-        _image = NULL;
+        // update the image only if it's needed
+        if (_updatedImageProcess != _processStep->process() || _updatedImageUpdateID < _processStep->process()->updateID()) {
+            
+            // update info about the currently displayed image
+            _updatedImageProcess = _processStep->process();
+            _updatedImageUpdateID = _processStep->process()->updateID();
 
-        _rawData = NULL;
-        _rawImage = NULL;
+            // delete last image
+            delete _image;
+            _image = NULL;
 
-        // convert from IPLImage
-        _rawData = _processStep->process()->getResultData(_resultIndex);
+            _rawData = NULL;
+            _rawImage = NULL;
 
-        // if the result is invalid, abort
-        if(!_rawData)
-        {
-            setVisible(false);
-            _imageViewerWindow->updateHistogram(NULL);
-            _imageViewerWindow->updateStatistics(NULL);
-            _imageViewerWindow->updateZoomwidget(NULL);
-            return;
-        }
-        else
-        {
-            setVisible(true);
-        }
+            // convert from IPLImage
+            _rawData = _processStep->process()->getResultData(_resultIndex);
 
-        if(_rawData->type() == IPL_IMAGE_COLOR
+            // if the result is invalid, abort
+            if (!_rawData)
+            {
+                setVisible(false);
+                _imageViewerWindow->updateHistogram(NULL);
+                _imageViewerWindow->updateStatistics(NULL);
+                _imageViewerWindow->updateZoomwidget(NULL);
+                return;
+            }
+            else
+            {
+                setVisible(true);
+            }
+
+            if (_rawData->type() == IPL_IMAGE_COLOR
                 || _rawData->type() == IPL_IMAGE_GRAYSCALE
                 || _rawData->type() == IPL_IMAGE_BW
                 || _rawData->type() == IPL_IMAGE_ORIENTED
                 )
-        {
-            _rawImage = _rawData->toImage();
-
-            // show normal image
-            _image = new QImage(_rawImage->rgb32(), _rawImage->width(), _rawImage->height(), QImage::Format_RGB32);
-        }
-        else if(_rawData->type() == IPL_IMAGE_COMPLEX)
-        {
-            _rawComplexImage = _rawData->toComplexImage();
-
-            // show complex image
-            _image = new QImage(_rawComplexImage->rgb32(), _rawComplexImage->width(), _rawComplexImage->height(), QImage::Format_RGB32);
-        }
-        else if(_rawData->type() == IPL_POINT)
-        {
-            // show point
-            _rawData = _processStep->process()->getResultData(0);
-            _image = new QImage(_rawData->toImage()->rgb32(), _rawData->toImage()->width(), _rawData->toImage()->height(), QImage::Format_RGB32);
-
-            QPainter painter(_image);
-            painter.setRenderHint(QPainter::Antialiasing, true);
-
-            IPLPoint* p = _processStep->process()->getResultData(1)->toPoint();
-
-            QPoint point;
-            point.setX(p->x());
-            point.setY(p->y());
-
-            QBrush brush(Qt::red);
-            painter.setBrush(brush);
-            painter.drawEllipse(point, 10, 10);
-        }
-        else if(_rawData->type() == IPL_MATRIX)
-        {
-            int cellSize = 30;
-            int headerSize = 30;
-
-            IPLMatrix* matrix = _rawData->toMatrix();
-            _image = new QImage(matrix->width()*cellSize+2*headerSize, matrix->height()*cellSize+2*headerSize, QImage::Format_RGB32);
-            _image->fill(Qt::white);
-
-            QPainter painter(_image);
-            painter.setRenderHint(QPainter::Antialiasing, true);
-
-            // header
-            QPen pen(Qt::black);
-            pen.setWidth(2);
-            painter.setPen(pen);
-
-            QString title("%1×%2 Matrix");
-            painter.drawText(headerSize+2, headerSize-5, title.arg(matrix->width()).arg(matrix->height()));
-
-            // content
-            for(int y=0; y < matrix->height(); y++)
             {
-                for(int x=0; x < matrix->width(); x++)
+                _rawImage = _rawData->toImage();
+
+                // show normal image
+                _image = new QImage(_rawImage->rgb32(), _rawImage->width(), _rawImage->height(), QImage::Format_RGB32);
+            }
+            else if (_rawData->type() == IPL_IMAGE_COMPLEX)
+            {
+                _rawComplexImage = _rawData->toComplexImage();
+
+                // show complex image
+                _image = new QImage(_rawComplexImage->rgb32(), _rawComplexImage->width(), _rawComplexImage->height(), QImage::Format_RGB32);
+            }
+            else if (_rawData->type() == IPL_POINT)
+            {
+                // show point
+                _rawData = _processStep->process()->getResultData(0);
+                _image = new QImage(_rawData->toImage()->rgb32(), _rawData->toImage()->width(), _rawData->toImage()->height(), QImage::Format_RGB32);
+
+                QPainter painter(_image);
+                painter.setRenderHint(QPainter::Antialiasing, true);
+
+                IPLPoint* p = _processStep->process()->getResultData(1)->toPoint();
+
+                QPoint point;
+                point.setX(p->x());
+                point.setY(p->y());
+
+                QBrush brush(Qt::red);
+                painter.setBrush(brush);
+                painter.drawEllipse(point, 10, 10);
+            }
+            else if (_rawData->type() == IPL_MATRIX)
+            {
+                int cellSize = 30;
+                int headerSize = 30;
+
+                IPLMatrix* matrix = _rawData->toMatrix();
+                _image = new QImage(matrix->width() * cellSize + 2 * headerSize, matrix->height() * cellSize + 2 * headerSize, QImage::Format_RGB32);
+                _image->fill(Qt::white);
+
+                QPainter painter(_image);
+                painter.setRenderHint(QPainter::Antialiasing, true);
+
+                // header
+                QPen pen(Qt::black);
+                pen.setWidth(2);
+                painter.setPen(pen);
+
+                QString title("%1×%2 Matrix");
+                painter.drawText(headerSize + 2, headerSize - 5, title.arg(matrix->width()).arg(matrix->height()));
+
+                // content
+                for (int y = 0; y < matrix->height(); y++)
                 {
-                    QRectF box(x*cellSize+headerSize, y*cellSize+headerSize, cellSize, cellSize);
-                    painter.drawText(box, Qt::AlignCenter|Qt::AlignVCenter, QString::number(matrix->get(x,y), 'f', 2));
-                    painter.drawRect(box);
+                    for (int x = 0; x < matrix->width(); x++)
+                    {
+                        QRectF box(x * cellSize + headerSize, y * cellSize + headerSize, cellSize, cellSize);
+                        painter.drawText(box, Qt::AlignCenter | Qt::AlignVCenter, QString::number(matrix->get(x, y), 'f', 2));
+                        painter.drawRect(box);
+                    }
                 }
             }
-        }
-        else if (_rawData->type() == IPL_LINES)
-        {
-            _image = new QImage(_rawData->toLines()->width(), _rawData->toLines()->height(), QImage::Format_RGB32);
-            _image->fill(Qt::white);
-
-            QPainter painter(_image);
-            painter.setRenderHint(QPainter::Antialiasing, true);
-
-            // header
-            QPen pen(Qt::black);
-            pen.setWidth(1);
-            painter.setPen(pen);
-
-            IPLLines* linesPtr = _rawData->toLines();
-
-            for(int i = 0; i < linesPtr->size(); ++i)
+            else if (_rawData->type() == IPL_LINES)
             {
-                const cv::Vec4i& line = (*linesPtr)[i];
-                painter.drawLine(line[0], line[1], line[2], line[3]);
+                _image = new QImage(_rawData->toLines()->width(), _rawData->toLines()->height(), QImage::Format_RGB32);
+                _image->fill(Qt::white);
+
+                QPainter painter(_image);
+                painter.setRenderHint(QPainter::Antialiasing, true);
+
+                // header
+                QPen pen(Qt::black);
+                pen.setWidth(1);
+                painter.setPen(pen);
+
+                IPLLines* linesPtr = _rawData->toLines();
+
+                for (int i = 0; i < linesPtr->size(); ++i)
+                {
+                    const cv::Vec4i& line = (*linesPtr)[i];
+                    painter.drawLine(line[0], line[1], line[2], line[3]);
+                }
             }
+
+            // update histogram
+            _imageViewerWindow->updateHistogram(_rawImage);
+
+            // update statistics
+            _imageViewerWindow->updateStatistics(_rawImage);
+
+            // update zoom widget
+            _imageViewerWindow->updateZoomwidget(_rawImage);
+
+
+            if (_image)
+            {
+                // we make a copy of the image data in order to prevent read access violations
+                QPixmap pixmap = QPixmap::fromImage(_image->copy());
+
+                _pixmapItem->setPixmap(pixmap);
+
+                // center to 0,0
+    //            _pixmapItem->setPos(-_pixmapItem->boundingRect().width()/2, -_pixmapItem->boundingRect().height()/2);
+
+                _graphicsScene->setSceneRect(_pixmapItem->boundingRect());
+            }
+            else
+            {
+                _pixmapItem->hide();
+            }
+            //_graphicsScene->update();
+
+            // update title
+            /*if(_tabIndex > -1)
+            {
+                IPLProcessPropertyString* property = (IPLProcessPropertyString*) _processStep->process()->property("title");
+                QString title = QString::fromStdString(property->value());
+                ((QTabWidget*) parent())->setTabText(_tabIndex, title);
+            }*/
         }
-
-        // update histogram
-        _imageViewerWindow->updateHistogram(_rawImage);
-
-        // update statistics
-        _imageViewerWindow->updateStatistics(_rawImage);
-
-        // update zoom widget
-        _imageViewerWindow->updateZoomwidget(_rawImage);
-
-
-        if(_image)
-        {
-            // we make a copy of the image data in order to prevent read access violations
-            QPixmap pixmap = QPixmap::fromImage(_image->copy());
-
-            _pixmapItem->setPixmap(pixmap);
-
-            // center to 0,0
-//            _pixmapItem->setPos(-_pixmapItem->boundingRect().width()/2, -_pixmapItem->boundingRect().height()/2);
-
-            _graphicsScene->setSceneRect(_pixmapItem->boundingRect());
-        }
-        else
-        {
-            _pixmapItem->hide();
-        }
-        //_graphicsScene->update();
-
-        // update title
-        /*if(_tabIndex > -1)
-        {
-            IPLProcessPropertyString* property = (IPLProcessPropertyString*) _processStep->process()->property("title");
-            QString title = QString::fromStdString(property->value());
-            ((QTabWidget*) parent())->setTabText(_tabIndex, title);
-        }*/
     }
     else
     {
